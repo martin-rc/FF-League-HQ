@@ -303,6 +303,55 @@ window.SL_HEADMAP = { cols: 12, at: {"A.J. Brown": [0, 0], "AJ Barner": [0, 1], 
   .sl .news .bul::before { content: '•'; color: var(--mint); font-weight: 800; }
   .sl .news .foot { color: var(--muted); font-size: 12px; margin-top: 16px; border-top: 1px solid var(--line); padding-top: 10px; }
   @media (max-width: 640px) { .sl .news .hl { font-size: 18px; } }
+  /* TRADE-CSS-START */
+  .sl .tside .thead, .sl .tverdict .thead { display: flex; gap: 10px; align-items: center; margin-bottom: 6px; }
+  .sl .tside select { font: inherit; font-weight: 700; color: var(--fg); background: var(--card2); border: 1px solid var(--line); border-radius: 10px; padding: 6px 8px; max-width: 100%; width: 100%; }
+  .sl .tcap { margin: 4px 0 2px; }
+  .sl .tlist { max-height: 34rem; overflow-y: auto; }
+  .sl .trow { gap: 8px; }
+  .sl .trow.on { background: rgba(0,211,179,.09); margin: 0 -14px; padding-left: 14px; padding-right: 14px; }
+  .sl .thdr { padding: 6px 0 2px; border-bottom: 1px solid var(--line); font-size: 10.5px; text-transform: uppercase; letter-spacing: .05em; color: var(--muted); font-weight: 700; }
+  .sl .tnums { display: grid; grid-template-columns: repeat(3, 3.6rem); gap: 2px; font-size: 12.5px; }
+  .sl .thdr .tnums { font-size: 10px; }
+  .sl .tbtn { font: inherit; font-size: 12px; font-weight: 700; padding: 5px 0; width: 5.6rem; border-radius: 999px; border: 1px solid var(--line); background: var(--card2); color: var(--fg); cursor: pointer; flex: none; }
+  .sl .tbtn[aria-pressed="true"] { background: var(--mint); color: #062621; border-color: var(--mint); }
+  .sl .tbtnsp { width: 5.6rem; flex: none; }
+  .sl .tbar { margin-top: 12px; display: flex; flex-wrap: wrap; gap: 10px 18px; align-items: center; position: sticky; bottom: 8px; z-index: 3; box-shadow: 0 8px 24px rgba(0,0,0,.45); }
+  .sl .tgive { display: flex; gap: 6px; align-items: center; flex-wrap: wrap; min-width: 0; }
+  .sl .tbtns { margin-left: auto; display: flex; gap: 6px; }
+  .sl .tclear { font: inherit; font-size: 12px; font-weight: 600; padding: 6px 12px; border-radius: 999px; border: 1px solid var(--line); background: var(--card2); color: var(--muted); cursor: pointer; }
+  .sl .tgrade { margin-left: auto; text-align: center; flex: none; min-width: 5.5rem; padding: 6px 10px; border-radius: 12px; background: var(--card2); }
+  .sl .tgrade .gl { font-size: 26px; font-weight: 800; line-height: 1.1; }
+  .sl .tgrade .gw { font-size: 11px; color: var(--muted); font-weight: 700; }
+  .sl .tgrade.gA .gl { color: var(--mint); } .sl .tgrade.gB .gl { color: #a3d65c; } .sl .tgrade.gC .gl { color: var(--gold); }
+  .sl .tgrade.gD .gl { color: var(--orange); } .sl .tgrade.gF .gl { color: var(--pink); }
+  .sl .tkpis { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; margin: 8px 0 4px; }
+  .sl .tkpis .kpi { background: var(--card2); border-radius: 10px; padding: 8px 10px; min-width: 0; }
+  .sl .tkpis .k { font-size: 11px; color: var(--muted); font-weight: 700; text-transform: uppercase; letter-spacing: .04em; }
+  .sl .tkpis .v { font-size: 20px; font-weight: 800; font-variant-numeric: tabular-nums; }
+  .sl .tkpis .dl { font-size: 12px; font-weight: 600; }
+  .sl .tpc { margin-top: 10px; }
+  .sl .tpc ul { margin: 0; padding-left: 0; list-style: none; display: grid; gap: 5px; }
+  .sl .tpc li { padding-left: 20px; position: relative; line-height: 1.45; }
+  .sl .tpc li::before { position: absolute; left: 0; top: 0; font-weight: 800; }
+  .sl .tpc.pro li::before { content: '+'; color: var(--mint); } .sl .tpc.con li::before { content: '−'; color: var(--pink); }
+  .sl .tpc.rsk li::before { content: '!'; color: var(--gold); } .sl .tpc.ctx li::before { content: 'i'; color: var(--blue); }
+  .sl .tpc.pro h3 { color: var(--mint); } .sl .tpc.con h3 { color: var(--pink); } .sl .tpc.rsk h3 { color: var(--gold); } .sl .tpc.ctx h3 { color: var(--blue); }
+  .sl .dl.pos { color: var(--mint); } .sl .dl.neg { color: var(--pink); }
+  .sl .tpl { display: flex; align-items: center; gap: 6px; }
+  .sl .mu { display: inline-block; font-size: 11px; font-weight: 700; padding: 1px 6px; border-radius: 6px; margin-right: 3px; background: var(--card2); color: var(--muted); }
+  .sl .mu.easy { background: rgba(0,211,179,.16); color: var(--mint); } .sl .mu.hard { background: rgba(255,79,123,.16); color: var(--pink); }
+  @media (max-width: 640px) {
+    .sl .tnums { grid-template-columns: repeat(2, 2.9rem); font-size: 12px; }
+    .sl .tnums > span:first-child { display: none; }
+    .sl .tbtn, .sl .tbtnsp { width: 3.6rem; font-size: 11px; }
+    .sl .tside .li .nm { white-space: normal; overflow-wrap: anywhere; font-size: 13px; }
+    .sl .tside .li .tm { white-space: normal; }
+    .sl .trow .tm { font-size: 11px; }
+    .sl .tkpis .v { font-size: 17px; }
+    .sl .tbar { bottom: 4px; }
+  }
+  /* TRADE-CSS-END */
 </style>
 
 <div class="sl">
@@ -324,6 +373,7 @@ window.SL_HEADMAP = { cols: 12, at: {"A.J. Brown": [0, 0], "AJ Barner": [0, 1], 
     <button role="tab" data-tab="reports" aria-selected="false">Weekly reports 📰</button>
     <button role="tab" data-tab="odds" aria-selected="false">Playoff race 🎯</button>
     <button role="tab" data-tab="value" aria-selected="false">Team value 💰</button>
+    <button role="tab" data-tab="trade" aria-selected="false">Trade simulator 🔄</button>
     <button role="tab" data-tab="lab" aria-selected="false">Stat lab 🧪</button>
     <button role="tab" data-tab="managers" aria-selected="false">Managers</button>
     <button role="tab" data-tab="luck" aria-selected="false">Luck</button>
@@ -906,6 +956,16 @@ window.SL_HEADMAP = { cols: 12, at: {"A.J. Brown": [0, 0], "AJ Barner": [0, 1], 
   </section>
 
 
+  <!-- TRADE-SECTION-START -->
+  <section id="trade" data-page="trade" hidden>
+    <div class="explain">
+      <p class="big"><b>Set up a trade between any two teams and see who it helps.</b></p>
+      <p>Pick the two teams, tap the players each side sends, and the analysis runs on its own: League HQ value today, expected points for the rest of the regular season and the playoff weeks (byes and injury timelines included), playoff and title odds with and without the trade, roster fit by position, bench cover, roster spots, and the risk from injuries and week-to-week swings. <span class="muted" data-draw="tradeasof" data-source="managers"></span></p>
+    </div>
+    <div class="mt" data-draw="trade" data-source="managers"></div>
+  </section>
+  <!-- TRADE-SECTION-END -->
+
   <!-- ================= RECORDS ================= -->
   <section id="records" data-page="records" hidden>
     <h2>Monster games 🔥</h2>
@@ -941,6 +1001,7 @@ window.SL_HEADMAP = { cols: 12, at: {"A.J. Brown": [0, 0], "AJ Barner": [0, 1], 
       <li>Player points use the league's own scoring settings, which reproduce all 1,628 player scores Sleeper shows for weeks 1 to 8.</li>
       <li>The best lineup each week is rebuilt from the whole roster and matches Sleeper's max points for every team.</li>
       <li>Draft value compares a pick's average points a game with a curve fitted to what each slot returns so far (3+ games).</li>
+      <li>The trade simulator re-runs the Playoff race model with and without the trade. Expected points blend League HQ value with Sleeper's weekly projections (rescored for this league), which also carry byes and injury return dates.</li>
       <li>Profile pictures are each manager's Sleeper avatar and player headshots come from Sleeper, saved Nov 4 2026.</li>
     </ul>
   </details>
@@ -3099,4 +3160,529 @@ window.SL_HEADMAP = { cols: 12, at: {"A.J. Brown": [0, 0], "AJ Barner": [0, 1], 
   });
 })();
 </script>
+<script>/* TRADE-JS-START */
+window.TRADE = {"meta":{"season":"2026","week":9,"last":8,"po":15,"nplay":8,"deadline":12,"slots":["QB","RB","RB","WR","WR","TE","FLEX","FLEX","K","DEF"],"bench":6,"ir_slots":2,"weeks":[9,10,11,12,13,14,15,16,17],"A":0.65,"C":1.0,"SD":23.1,"lm":128.55,"scale":0.9229,"pos_sd":{"QB":6.8,"RB":6.7,"WR":6.8,"TE":6.2,"K":4.4,"DEF":15.1},"haz":{"QB":[0.064,0.176,218,34],"RB":[0.072,0.256,307,43],"WR":[0.075,0.305,468,59],"TE":[0.041,0.333,195,18],"K":[0.01,0.5,0,0],"DEF":[0.0,1.0,0,0]}},"teams":[{"rid":1,"manager":"PoloGlizzy","team":"K9s and Dawgs","w":5,"l":3,"t":0,"pf":1112.7,"mu":138.29,"lv":150.6,"players":["11560","12481","12501","12507","13274","13345","1479","4943","6083","6794","6806","8130","8144","8151","PIT","SF"],"ir":["13281"]},{"rid":2,"manager":"TheBigSisterFister","team":"They hit a second Bowers","w":6,"l":2,"t":0,"pf":1153.3,"mu":142.48,"lv":154.5,"players":["11604","11792","12469","12490","12526","13294","13296","13301","3163","3294","4199","9224","9482","9493","9997","CIN"],"ir":["11583"]},{"rid":3,"manager":"bigbozo69","team":"Bijan Mustard \ud83d\udde3\ufe0f","w":5,"l":3,"t":0,"pf":1043.3,"mu":126.95,"lv":131.0,"players":["11620","11783","11834","12185","12517","12527","13279","13305","421","5872","8112","8131","8132","9502","9509","KC"],"ir":["12489","2133"]},{"rid":4,"manager":"jgomeza14","team":"jgomeza14","w":2,"l":6,"t":0,"pf":989.5,"mu":125.45,"lv":138.4,"players":["10213","10955","11584","11647","12514","12518","13337","13424","4866","5850","6786","7600","8136","9228","9501","NYG"],"ir":["12533","6819"]},{"rid":5,"manager":"mumfojaz","team":"mumfojaz","w":1,"l":7,"t":0,"pf":933.7,"mu":116.7,"lv":123.8,"players":["11533","11624","12519","13287","13346","2449","3214","4892","4984","5947","7567","8111","8126","8150","LAR"],"ir":["8142"]},{"rid":6,"manager":"Sammogram","team":"Reston Rim Reapers","w":3,"l":5,"t":0,"pf":860.0,"mu":110.7,"lv":121.7,"players":["11539","11563","11610","11628","12529","13276","13833","3198","3634","4217","4881","4993","5012","7525","7547","PHI"],"ir":["10222"]},{"rid":7,"manager":"suspencerr","team":"OffInChurch","w":2,"l":6,"t":0,"pf":915.4,"mu":118.29,"lv":132.8,"players":["10229","11586","11646","12495","12512","12545","1466","1945","3257","5001","5022","8138","8183","JAX","SEA"],"ir":["2216"]},{"rid":8,"manager":"redRush12","team":"She be Pickens my Dicker","w":4,"l":4,"t":0,"pf":1096.0,"mu":136.95,"lv":150.2,"players":["10859","11435","11566","1166","12534","13298","3271","4037","6650","7588","7594","8119","8137","9488","9753","NE"],"ir":["5892","8121"]},{"rid":9,"manager":"gui15","team":"Man, Love Hurts","w":4,"l":4,"t":0,"pf":1013.2,"mu":125.51,"lv":133.3,"players":["10236","4147","4227","6130","6804","7569","7611","8110","8134","8135","8146","8148","8167","8228","96","DEN"],"ir":["6904"]},{"rid":10,"manager":"1236henry","team":"Henry","w":7,"l":1,"t":0,"pf":1180.4,"mu":145.6,"lv":158.1,"players":["11632","11637","11786","12474","4034","4983","5045","6801","7002","7021","7523","9221","9480","9484","9758","HOU"],"ir":["4454"]},{"rid":11,"manager":"bigbozostinks","team":"bigbozostinks","w":5,"l":3,"t":0,"pf":1086.5,"mu":136.79,"lv":151.8,"players":["11564","11576","11625","12506","2747","4035","4046","5846","5859","5967","6790","7564","8155","9500","9756","MIN"],"ir":["9486"]},{"rid":12,"manager":"juangod","team":"BrrrSoCold","w":4,"l":4,"t":0,"pf":956.6,"mu":118.84,"lv":125.3,"players":["10232","11631","11635","13286","13414","5844","5849","6770","6813","7526","7553","7839","8408","9487","BAL","CLE"],"ir":["7543"]}],"left":[[9,1,6],[9,2,11],[9,3,12],[9,4,7],[9,5,9],[9,8,10],[10,1,2],[10,3,11],[10,4,12],[10,5,8],[10,6,10],[10,7,9],[11,1,3],[11,2,10],[11,4,11],[11,5,7],[11,6,8],[11,9,12],[12,1,4],[12,2,8],[12,3,10],[12,5,6],[12,7,12],[12,9,11],[13,1,9],[13,2,6],[13,3,8],[13,4,10],[13,5,12],[13,7,11],[14,1,7],[14,2,5],[14,3,6],[14,4,8],[14,9,10],[14,11,12]],"players":{"11560":{"n":"Caleb Williams","pos":"QB","nfl":"CHI","st":"","age":24,"v":19.0,"g":5,"ppg":19.7,"l3":17.5,"sd":8.6,"E":[18.7,0.0,18.6,20.1,17.8,20.0,18.7,18.6,20.1],"ir":0,"wk":[37.3,8.7,null,null,null,16.5,22.1,14.0]},"12481":{"n":"Cam Skattebo","pos":"RB","nfl":"NYG","st":"Questionable","age":24,"v":9.6,"g":7,"ppg":10.1,"l3":8.7,"sd":6.0,"E":[10.8,10.4,9.8,10.5,8.8,8.6,8.9,9.6,9.5],"ir":0,"wk":[14.1,9.5,13.0,7.6,7.1,0.0,19.1,null]},"12501":{"n":"Matthew Golden","pos":"WR","nfl":"GB","st":"","age":23,"v":16.9,"g":8,"ppg":16.4,"l3":17.7,"sd":5.7,"E":[16.0,14.9,0.0,15.1,15.8,15.4,16.8,16.0,15.8],"ir":0,"wk":[15.5,9.8,21.0,11.7,20.3,22.4,9.9,20.9]},"12507":{"n":"Omarion Hampton","pos":"RB","nfl":"LAC","st":"","age":23,"v":7.8,"g":7,"ppg":8.9,"l3":5.8,"sd":5.4,"E":[8.7,8.9,9.2,9.3,8.9,9.6,8.9,9.6,8.9],"ir":0,"wk":[8.3,17.5,5.6,13.3,4.9,7.9,null,4.7]},"13274":{"n":"Germie Bernard","pos":"WR","nfl":"PIT","st":"","age":22,"v":10.0,"g":8,"ppg":8.3,"l3":13.1,"sd":7.4,"E":[0.0,9.8,9.3,9.0,9.6,9.5,9.5,9.2,9.8],"ir":0,"wk":[0.0,7.5,2.4,3.1,14.4,25.7,5.7,8.0]},"13281":{"n":"Jordyn Tyson","pos":"WR","nfl":"NO","st":"IR","age":22,"v":0.0,"g":0,"ppg":0.0,"l3":0.0,"sd":6.8,"E":[0.0,9.6,10.8,10.8,10.4,9.7,10.8,11.3,10.0],"ir":1,"wk":[null,null,null,null,null,null,null,null]},"13345":{"n":"Jonah Coleman","pos":"RB","nfl":"DEN","st":"","age":23,"v":12.3,"g":4,"ppg":11.0,"l3":14.7,"sd":7.1,"E":[13.1,0.0,13.0,11.8,12.1,11.7,12.1,11.7,11.7],"ir":0,"wk":[0.0,14.8,null,null,null,null,8.9,20.4]},"1479":{"n":"Keenan Allen","pos":"WR","nfl":"IND","st":"","age":34,"v":11.1,"g":7,"ppg":10.6,"l3":12.0,"sd":5.9,"E":[11.2,10.9,10.2,10.2,0.0,9.9,10.5,10.4,9.9],"ir":0,"wk":[9.2,1.5,18.3,null,9.5,16.2,6.1,13.7]},"4943":{"n":"Sam Darnold","pos":"QB","nfl":"SEA","st":"","age":29,"v":14.8,"g":7,"ppg":14.5,"l3":15.5,"sd":7.7,"E":[16.6,16.1,0.0,14.7,16.2,15.6,14.7,14.3,14.7],"ir":0,"wk":[0.5,null,29.7,14.3,10.3,13.0,15.0,18.5]},"6083":{"n":"Matt Gay","pos":"K","nfl":"LV","st":"","age":32,"v":10.1,"g":8,"ppg":10.1,"l3":10.0,"sd":3.6,"E":[8.7,8.8,8.8,8.8,0.0,9.0,8.9,9.2,9.0],"ir":0,"wk":[10.0,8.0,12.0,16.0,5.0,12.0,8.0,10.0]},"6794":{"n":"Justin Jefferson","pos":"WR","nfl":"MIN","st":"","age":27,"v":14.2,"g":6,"ppg":14.4,"l3":13.8,"sd":8.0,"E":[16.0,16.0,15.5,15.6,15.4,15.6,16.5,16.7,15.9],"ir":0,"wk":[31.2,8.5,5.2,null,18.8,null,8.4,14.3]},"6806":{"n":"J.K. Dobbins","pos":"RB","nfl":"DEN","st":"","age":27,"v":7.5,"g":8,"ppg":7.4,"l3":7.7,"sd":5.4,"E":[8.7,0.0,8.4,7.2,6.1,5.9,6.1,5.9,5.9],"ir":0,"wk":[3.6,3.6,6.3,7.2,15.4,13.6,8.3,1.3]},"8130":{"n":"Trey McBride","pos":"TE","nfl":"ARI","st":"","age":26,"v":19.2,"g":8,"ppg":18.8,"l3":19.9,"sd":5.7,"E":[17.1,17.5,17.6,19.1,17.7,0.0,18.2,18.2,18.4],"ir":0,"wk":[24.5,18.1,16.5,10.1,21.6,12.3,27.1,20.2]},"8144":{"n":"Chris Olave","pos":"WR","nfl":"NO","st":"","age":26,"v":15.6,"g":7,"ppg":17.8,"l3":11.5,"sd":6.4,"E":[15.5,15.9,16.8,16.8,16.5,15.9,16.8,17.2,16.2],"ir":0,"wk":[28.2,22.6,19.7,19.6,8.6,14.3,11.6,null]},"8151":{"n":"Kenneth Walker III","pos":"RB","nfl":"KC","st":"","age":26,"v":20.7,"g":7,"ppg":22.9,"l3":16.7,"sd":7.9,"E":[21.3,20.9,21.7,21.0,20.5,22.3,21.3,20.6,21.4],"ir":0,"wk":[34.1,23.8,21.3,30.9,null,27.9,9.7,12.4]},"PIT":{"n":"Pittsburgh Steelers","pos":"DEF","nfl":"PIT","st":"","age":null,"v":11.5,"g":8,"ppg":10.5,"l3":13.3,"sd":10.2,"E":[0.0,8.5,9.0,9.0,9.0,9.0,8.9,9.3,9.9],"ir":0,"wk":[20.0,10.0,5.0,8.0,1.0,10.0,9.0,21.0]},"SF":{"n":"San Francisco 49ers","pos":"DEF","nfl":"SF","st":"","age":null,"v":7.6,"g":7,"ppg":7.1,"l3":8.3,"sd":10.4,"E":[7.7,6.7,6.9,6.9,6.9,6.9,7.4,6.8,7.6],"ir":0,"wk":[10.0,9.0,1.0,5.0,20.0,5.0,0.0,null]},"11583":{"n":"Jonathon Brooks","pos":"RB","nfl":"CAR","st":"IR","age":23,"v":4.2,"g":2,"ppg":4.7,"l3":4.7,"sd":5.6,"E":[0.0,5.9,5.5,5.5,4.4,5.1,5.3,4.8,4.5],"ir":1,"wk":[7.2,2.1,null,null,null,null,null,null]},"11604":{"n":"Brock Bowers","pos":"TE","nfl":"LV","st":"","age":23,"v":19.5,"g":6,"ppg":20.6,"l3":17.5,"sd":6.4,"E":[19.2,18.2,18.1,18.5,0.0,18.9,18.1,19.3,19.5],"ir":0,"wk":[null,null,27.6,20.6,23.0,11.0,13.3,28.2]},"11792":{"n":"Will Reichard","pos":"K","nfl":"MIN","st":"","age":25,"v":10.7,"g":7,"ppg":11.4,"l3":9.3,"sd":5.5,"E":[9.0,8.9,8.9,8.9,8.9,8.9,9.2,9.2,8.8],"ir":0,"wk":[7.0,10.0,16.0,19.0,16.0,null,12.0,0.0]},"12469":{"n":"Dylan Sampson","pos":"RB","nfl":"CLE","st":"","age":22,"v":7.9,"g":3,"ppg":7.9,"l3":7.9,"sd":6.2,"E":[8.4,6.4,0.0,6.6,6.7,6.3,6.6,6.3,6.6],"ir":0,"wk":[0.0,null,null,null,null,null,10.7,12.9]},"12490":{"n":"Bhayshul Tuten","pos":"RB","nfl":"JAX","st":"Questionable","age":23,"v":18.7,"g":7,"ppg":16.9,"l3":22.1,"sd":6.9,"E":[16.4,15.8,16.3,15.9,16.4,15.4,15.4,16.2,15.8],"ir":0,"wk":[9.8,14.2,17.0,11.1,11.6,24.7,null,29.9]},"12526":{"n":"Tetairoa McMillan","pos":"WR","nfl":"CAR","st":"","age":23,"v":14.1,"g":7,"ppg":15.6,"l3":11.5,"sd":10.9,"E":[14.0,14.3,14.2,14.6,13.5,14.2,14.5,14.4,13.7],"ir":0,"wk":[10.5,15.1,3.7,45.2,null,14.6,8.0,11.8]},"13294":{"n":"Makai Lemon","pos":"WR","nfl":"PHI","st":"","age":22,"v":9.2,"g":8,"ppg":7.7,"l3":12.1,"sd":5.9,"E":[7.2,0.0,7.3,7.5,7.5,7.3,7.0,7.3,7.1],"ir":0,"wk":[2.5,1.9,5.9,5.7,9.3,4.9,19.7,11.7]},"13296":{"n":"Caleb Douglas","pos":"WR","nfl":"MIA","st":"","age":23,"v":11.6,"g":4,"ppg":11.9,"l3":11.1,"sd":6.6,"E":[10.1,9.5,9.4,9.5,9.2,9.7,9.6,9.6,9.4],"ir":0,"wk":[14.4,3.9,null,null,null,null,21.0,8.3]},"13301":{"n":"Antonio Williams","pos":"WR","nfl":"WAS","st":"","age":22,"v":8.0,"g":7,"ppg":7.8,"l3":8.2,"sd":5.2,"E":[7.7,7.7,7.9,8.1,8.0,7.8,7.6,7.3,7.7],"ir":0,"wk":[16.4,5.4,3.5,5.1,6.1,8.0,null,10.4]},"3163":{"n":"Jared Goff","pos":"QB","nfl":"DET","st":"","age":32,"v":19.9,"g":7,"ppg":20.4,"l3":19.0,"sd":6.6,"E":[19.9,18.9,19.6,19.8,18.7,19.6,18.2,19.7,19.8],"ir":0,"wk":[16.4,29.8,19.4,20.5,28.9,null,18.0,10.0]},"3294":{"n":"Dak Prescott","pos":"QB","nfl":"DAL","st":"","age":33,"v":19.0,"g":8,"ppg":19.1,"l3":18.7,"sd":5.7,"E":[19.4,17.9,18.8,17.9,17.7,0.0,17.5,17.9,18.9],"ir":0,"wk":[15.4,29.8,18.9,18.1,14.6,13.0,23.3,19.8]},"4199":{"n":"Aaron Jones Sr.","pos":"RB","nfl":"MIN","st":"","age":31,"v":10.7,"g":7,"ppg":11.4,"l3":9.4,"sd":5.7,"E":[10.2,10.4,9.9,10.1,10.8,10.3,11.0,10.5,10.2],"ir":0,"wk":[10.0,10.5,14.2,16.8,18.7,null,3.6,6.0]},"9224":{"n":"Chase Brown","pos":"RB","nfl":"CIN","st":"","age":26,"v":12.3,"g":7,"ppg":13.0,"l3":11.0,"sd":5.4,"E":[14.2,13.6,14.1,14.4,13.6,13.4,14.6,14.3,13.5],"ir":0,"wk":[18.8,11.2,8.9,19.1,7.0,null,9.8,16.1]},"9482":{"n":"Michael Mayer","pos":"TE","nfl":"LV","st":"","age":25,"v":10.1,"g":8,"ppg":9.6,"l3":11.0,"sd":5.4,"E":[9.1,8.6,8.5,8.7,0.0,8.9,8.5,9.1,9.2],"ir":0,"wk":[9.2,5.3,12.2,16.2,1.2,16.5,6.2,10.3]},"9493":{"n":"Puka Nacua","pos":"WR","nfl":"LAR","st":"","age":25,"v":22.1,"g":6,"ppg":23.1,"l3":20.3,"sd":7.9,"E":[22.6,22.8,0.0,21.7,21.0,21.1,22.5,21.0,22.0],"ir":0,"wk":[12.4,null,null,27.7,37.7,14.0,21.8,25.0]},"9997":{"n":"Zay Flowers","pos":"WR","nfl":"BAL","st":"","age":26,"v":16.1,"g":7,"ppg":17.5,"l3":13.5,"sd":8.4,"E":[15.1,16.5,16.0,16.5,0.0,16.7,16.6,16.1,16.8],"ir":0,"wk":[26.0,null,15.4,25.8,14.6,12.7,27.7,0.0]},"CIN":{"n":"Cincinnati Bengals","pos":"DEF","nfl":"CIN","st":"","age":null,"v":9.5,"g":7,"ppg":9.7,"l3":9.0,"sd":10.2,"E":[8.1,8.0,7.5,7.5,7.5,7.5,8.0,7.9,7.6],"ir":0,"wk":[22.0,11.0,3.0,5.0,10.0,null,10.0,7.0]},"11620":{"n":"Rome Odunze","pos":"WR","nfl":"CHI","st":"","age":24,"v":9.5,"g":8,"ppg":9.1,"l3":10.2,"sd":4.7,"E":[10.5,0.0,10.2,10.7,10.2,11.0,10.0,10.2,10.7],"ir":0,"wk":[7.2,7.3,7.4,15.4,5.0,6.9,10.9,12.7]},"11783":{"n":"Ryan Flournoy","pos":"WR","nfl":"DAL","st":"","age":27,"v":11.0,"g":8,"ppg":9.6,"l3":13.7,"sd":5.2,"E":[9.8,9.2,9.7,9.2,9.2,0.0,9.1,9.4,9.5],"ir":0,"wk":[4.2,7.3,4.2,7.7,12.0,17.0,11.0,13.1]},"11834":{"n":"Devaughn Vele","pos":"WR","nfl":"NO","st":"","age":28,"v":11.5,"g":7,"ppg":12.3,"l3":10.1,"sd":5.8,"E":[9.8,8.1,8.3,8.4,8.3,8.1,8.4,8.5,8.2],"ir":0,"wk":[19.9,11.4,6.9,17.4,6.6,7.2,16.4,null]},"12185":{"n":"Spencer Shrader","pos":"K","nfl":"IND","st":"","age":27,"v":8.6,"g":8,"ppg":10.9,"l3":4.3,"sd":6.1,"E":[8.2,8.5,8.1,8.1,0.0,8.3,8.3,8.5,8.0],"ir":0,"wk":[6.0,14.0,17.0,16.0,21.0,9.0,3.0,1.0]},"12489":{"n":"RJ Harvey","pos":"RB","nfl":"DEN","st":"IR","age":25,"v":10.7,"g":6,"ppg":11.2,"l3":9.8,"sd":6.2,"E":[0.0,0.0,0.0,0.0,9.2,8.9,9.1,8.8,8.9],"ir":1,"wk":[8.1,null,10.7,19.3,0.7,14.6,14.0,null]},"12517":{"n":"Colston Loveland","pos":"TE","nfl":"CHI","st":"","age":22,"v":11.8,"g":8,"ppg":9.2,"l3":16.6,"sd":6.8,"E":[11.4,0.0,11.3,11.8,11.3,12.0,11.1,11.3,11.7],"ir":0,"wk":[0.0,1.3,7.1,11.7,3.9,18.5,19.9,11.5]},"12527":{"n":"Ashton Jeanty","pos":"RB","nfl":"LV","st":"","age":22,"v":16.3,"g":8,"ppg":16.5,"l3":15.9,"sd":7.1,"E":[14.3,15.9,16.5,16.5,0.0,17.0,16.6,17.2,17.2],"ir":0,"wk":[32.7,10.3,12.3,18.6,10.7,15.8,21.6,10.3]},"13279":{"n":"Carnell Tate","pos":"WR","nfl":"TEN","st":"Out","age":21,"v":10.7,"g":7,"ppg":11.0,"l3":10.2,"sd":6.6,"E":[0.0,12.1,12.8,12.1,12.9,12.7,12.1,12.3,12.2],"ir":0,"wk":[7.8,5.7,11.8,21.5,1.6,19.0,9.9,null]},"13305":{"n":"Mike Washington Jr.","pos":"RB","nfl":"LV","st":"","age":23,"v":5.1,"g":8,"ppg":4.7,"l3":5.7,"sd":4.7,"E":[6.6,5.3,5.5,5.4,0.0,5.6,5.5,5.6,5.6],"ir":0,"wk":[4.1,0.7,11.4,2.7,2.0,6.0,2.7,8.3]},"2133":{"n":"Davante Adams","pos":"WR","nfl":"LAR","st":"IR","age":33,"v":15.3,"g":6,"ppg":17.0,"l3":12.1,"sd":10.3,"E":[0.0,0.0,0.0,13.8,14.9,15.0,16.0,14.9,15.6],"ir":1,"wk":[5.6,39.5,20.7,7.2,22.1,6.9,null,null]},"421":{"n":"Matthew Stafford","pos":"QB","nfl":"LAR","st":"Questionable","age":38,"v":16.6,"g":8,"ppg":17.5,"l3":14.9,"sd":7.5,"E":[17.5,18.1,0.0,16.3,15.6,15.8,17.2,15.6,16.5],"ir":0,"wk":[5.1,28.0,22.9,11.7,27.3,16.9,18.5,9.3]},"5872":{"n":"Deebo Samuel Sr.","pos":"WR","nfl":"SF","st":"Questionable","age":30,"v":12.0,"g":5,"ppg":12.1,"l3":12.0,"sd":6.6,"E":[11.4,11.9,10.9,11.1,11.5,11.0,11.5,11.1,11.1],"ir":0,"wk":[18.0,6.5,15.4,18.0,2.5,null,null,null]},"8112":{"n":"Drake London","pos":"WR","nfl":"ATL","st":"","age":25,"v":12.8,"g":8,"ppg":13.7,"l3":11.2,"sd":7.6,"E":[15.9,14.1,0.0,13.8,15.2,14.2,15.4,14.9,14.6],"ir":0,"wk":[5.5,8.9,28.4,14.6,18.8,12.2,19.6,1.8]},"8131":{"n":"Isaiah Likely","pos":"TE","nfl":"NYG","st":"","age":26,"v":17.4,"g":7,"ppg":16.1,"l3":19.8,"sd":9.6,"E":[14.5,15.9,15.3,15.4,15.0,14.9,15.0,15.9,15.9],"ir":0,"wk":[27.8,8.3,3.3,13.6,32.4,23.9,3.2,null]},"8132":{"n":"Tyler Allgeier","pos":"RB","nfl":"ARI","st":"","age":26,"v":12.6,"g":8,"ppg":10.5,"l3":16.6,"sd":9.1,"E":[12.3,9.6,9.6,10.1,9.6,0.0,9.9,10.0,10.1],"ir":0,"wk":[9.0,3.9,4.9,12.9,3.6,5.8,7.9,36.1]},"9502":{"n":"Tank Dell","pos":"WR","nfl":"HOU","st":"","age":27,"v":4.4,"g":1,"ppg":5.5,"l3":5.5,"sd":6.8,"E":[3.0,2.9,3.0,3.0,3.1,3.3,3.0,2.9,3.0],"ir":0,"wk":[null,null,null,null,null,null,5.5,null]},"9509":{"n":"Bijan Robinson","pos":"RB","nfl":"ATL","st":"","age":24,"v":16.2,"g":8,"ppg":19.2,"l3":10.7,"sd":9.2,"E":[19.7,18.3,0.0,17.7,20.1,18.6,19.1,18.4,19.5],"ir":0,"wk":[31.3,11.1,35.3,27.7,15.8,7.3,17.2,7.6]},"KC":{"n":"Kansas City Chiefs","pos":"DEF","nfl":"KC","st":"","age":null,"v":6.7,"g":7,"ppg":6.7,"l3":6.7,"sd":10.1,"E":[8.0,6.6,6.8,6.8,6.8,6.8,6.7,6.5,7.0],"ir":0,"wk":[13.0,1.0,9.0,4.0,null,16.0,3.0,1.0]},"10213":{"n":"Tre Tucker","pos":"WR","nfl":"LV","st":"","age":25,"v":13.7,"g":8,"ppg":12.5,"l3":16.0,"sd":8.4,"E":[12.4,11.8,11.7,11.9,0.0,12.2,11.7,12.4,12.6],"ir":0,"wk":[4.7,22.9,8.3,8.4,7.5,26.7,21.3,0.0]},"10955":{"n":"Chad Ryland","pos":"K","nfl":"ARI","st":"","age":27,"v":11.1,"g":8,"ppg":10.0,"l3":13.0,"sd":5.4,"E":[8.0,8.5,8.5,8.5,8.5,0.0,8.7,8.8,8.6],"ir":0,"wk":[15.0,1.0,14.0,9.0,2.0,19.0,11.0,9.0]},"11584":{"n":"Bucky Irving","pos":"RB","nfl":"TB","st":"","age":24,"v":16.7,"g":8,"ppg":16.3,"l3":17.3,"sd":8.1,"E":[17.1,0.0,17.1,17.0,16.3,15.7,16.7,15.8,15.5],"ir":0,"wk":[20.3,13.0,7.8,6.1,31.5,6.9,24.0,21.0]},"11647":{"n":"Kimani Vidal","pos":"RB","nfl":"LAC","st":"","age":25,"v":6.5,"g":7,"ppg":5.6,"l3":8.2,"sd":5.5,"E":[7.0,6.4,6.5,6.5,6.4,6.7,6.3,6.8,6.3],"ir":0,"wk":[0.0,0.0,3.0,11.6,12.6,7.0,null,5.0]},"12514":{"n":"Emeka Egbuka","pos":"WR","nfl":"TB","st":"Questionable","age":24,"v":12.2,"g":6,"ppg":11.8,"l3":12.8,"sd":5.7,"E":[11.4,0.0,12.4,11.4,11.9,11.8,11.8,11.6,11.3],"ir":0,"wk":[11.3,10.3,11.2,3.3,17.2,17.8,null,null]},"12518":{"n":"Tyler Warren","pos":"TE","nfl":"IND","st":"","age":24,"v":12.4,"g":6,"ppg":12.6,"l3":12.1,"sd":5.5,"E":[12.8,12.9,12.1,12.1,0.0,11.8,12.5,12.4,11.8],"ir":0,"wk":[10.3,14.4,14.7,9.1,21.4,null,null,5.8]},"12533":{"n":"Jacory Croskey-Merritt","pos":"RB","nfl":"WAS","st":"IR","age":25,"v":8.9,"g":5,"ppg":9.0,"l3":8.8,"sd":5.2,"E":[0.0,0.0,8.9,8.3,8.4,8.1,8.2,7.8,7.9],"ir":1,"wk":[12.6,5.8,5.3,7.0,14.2,null,null,null]},"13337":{"n":"Emmett Johnson","pos":"RB","nfl":"KC","st":"","age":23,"v":8.7,"g":7,"ppg":7.3,"l3":11.1,"sd":7.3,"E":[7.6,6.5,6.7,6.6,6.4,6.8,6.6,6.4,6.6],"ir":0,"wk":[8.8,5.5,1.7,2.0,null,4.4,3.7,25.3]},"13424":{"n":"Seth McGowan","pos":"RB","nfl":"IND","st":"","age":25,"v":3.1,"g":8,"ppg":2.7,"l3":3.8,"sd":4.1,"E":[4.9,4.2,3.8,4.2,0.0,3.7,4.0,4.3,3.9],"ir":0,"wk":[1.0,0.0,1.4,4.8,2.9,2.7,5.8,2.9]},"4866":{"n":"Saquon Barkley","pos":"RB","nfl":"PHI","st":"","age":29,"v":8.9,"g":6,"ppg":8.4,"l3":9.8,"sd":5.6,"E":[10.9,0.0,10.4,11.3,10.9,11.3,10.0,10.5,10.2],"ir":0,"wk":[9.0,3.0,9.0,2.0,null,null,15.1,12.4]},"5850":{"n":"Josh Jacobs","pos":"RB","nfl":"GB","st":"","age":28,"v":19.5,"g":2,"ppg":21.6,"l3":21.6,"sd":5.5,"E":[15.4,14.3,0.0,14.7,16.2,15.5,16.3,16.6,15.2],"ir":0,"wk":[null,null,null,null,null,null,20.1,23.2]},"6786":{"n":"CeeDee Lamb","pos":"WR","nfl":"DAL","st":"","age":27,"v":19.9,"g":8,"ppg":21.0,"l3":17.7,"sd":10.3,"E":[20.0,19.4,20.4,19.4,19.3,0.0,19.2,19.8,19.9],"ir":0,"wk":[15.4,35.3,20.2,41.3,2.9,16.0,24.4,12.8]},"6819":{"n":"Michael Pittman Jr.","pos":"WR","nfl":"PIT","st":"IR","age":29,"v":5.3,"g":3,"ppg":5.3,"l3":5.3,"sd":5.4,"E":[0.0,6.0,5.6,5.5,5.9,5.9,5.8,5.6,6.1],"ir":1,"wk":[8.8,null,3.6,3.5,null,null,null,null]},"7600":{"n":"Pat Freiermuth","pos":"TE","nfl":"PIT","st":"","age":28,"v":8.6,"g":8,"ppg":9.9,"l3":6.2,"sd":6.0,"E":[0.0,9.3,8.8,8.6,9.1,9.1,9.0,8.8,9.3],"ir":0,"wk":[15.6,7.4,5.1,10.7,21.5,3.1,4.0,11.6]},"8136":{"n":"Rachaad White","pos":"RB","nfl":"WAS","st":"","age":27,"v":10.6,"g":6,"ppg":10.5,"l3":10.9,"sd":5.7,"E":[10.6,11.2,9.8,9.5,9.5,9.2,9.2,8.9,9.1],"ir":0,"wk":[4.7,14.3,11.1,null,3.0,15.7,null,14.0]},"9228":{"n":"Bryce Young","pos":"QB","nfl":"CAR","st":"","age":25,"v":16.7,"g":7,"ppg":18.7,"l3":12.9,"sd":7.5,"E":[16.8,18.0,17.6,18.0,16.6,18.0,18.1,17.9,17.1],"ir":0,"wk":[32.4,24.1,14.6,21.5,null,19.8,7.4,11.4]},"9501":{"n":"DeMario Douglas","pos":"WR","nfl":"NE","st":"","age":25,"v":11.4,"g":8,"ppg":10.2,"l3":13.8,"sd":7.3,"E":[9.2,9.3,0.0,9.0,8.9,8.6,8.8,9.0,8.7],"ir":0,"wk":[7.0,1.9,4.8,3.5,22.5,19.6,5.3,16.6]},"NYG":{"n":"New York Giants","pos":"DEF","nfl":"NYG","st":"","age":null,"v":4.8,"g":7,"ppg":5.7,"l3":3.0,"sd":9.7,"E":[6.3,5.7,5.6,5.6,5.6,5.6,6.2,4.9,5.0],"ir":0,"wk":[3.0,6.0,8.0,14.0,6.0,2.0,1.0,null]},"11533":{"n":"Brandon Aubrey","pos":"K","nfl":"DAL","st":"","age":31,"v":8.8,"g":8,"ppg":8.8,"l3":9.0,"sd":5.2,"E":[8.3,8.0,7.8,7.8,7.8,0.0,8.0,8.1,8.0],"ir":0,"wk":[1.0,17.0,10.0,10.0,5.0,1.0,14.0,12.0]},"11624":{"n":"Xavier Worthy","pos":"WR","nfl":"KC","st":"","age":23,"v":7.8,"g":7,"ppg":8.0,"l3":7.6,"sd":5.4,"E":[9.1,9.0,9.7,9.0,8.8,9.5,9.0,8.9,9.3],"ir":0,"wk":[4.8,13.5,4.0,11.0,null,14.3,4.1,4.3]},"12519":{"n":"Luther Burden III","pos":"WR","nfl":"CHI","st":"","age":22,"v":16.4,"g":8,"ppg":14.5,"l3":19.9,"sd":6.2,"E":[15.5,0.0,14.9,15.4,14.8,15.6,14.6,14.9,15.3],"ir":0,"wk":[9.5,6.2,19.8,11.4,8.9,17.5,23.7,18.6]},"13287":{"n":"Jeremiyah Love","pos":"RB","nfl":"ARI","st":"IR","age":21,"v":7.1,"g":6,"ppg":8.9,"l3":3.7,"sd":6.8,"E":[0.0,8.5,8.5,9.1,8.4,0.0,8.9,9.3,9.4],"ir":0,"wk":[13.0,7.5,21.9,6.5,2.2,null,null,2.3]},"13346":{"n":"Denzel Boston","pos":"WR","nfl":"CLE","st":"","age":22,"v":9.1,"g":8,"ppg":10.9,"l3":6.0,"sd":5.8,"E":[9.9,9.9,0.0,10.0,10.1,9.7,9.9,9.8,9.9],"ir":0,"wk":[13.9,20.5,8.1,12.9,13.6,2.5,5.7,9.7]},"2449":{"n":"Stefon Diggs","pos":"WR","nfl":"WAS","st":"","age":32,"v":13.3,"g":6,"ppg":13.7,"l3":12.6,"sd":5.7,"E":[12.6,12.6,12.9,13.2,13.0,12.7,12.5,12.1,12.7],"ir":0,"wk":[15.5,21.7,7.3,8.5,null,16.4,null,12.8]},"3214":{"n":"Hunter Henry","pos":"TE","nfl":"NE","st":"Questionable","age":31,"v":10.1,"g":8,"ppg":9.2,"l3":11.6,"sd":5.2,"E":[8.6,9.9,0.0,9.6,9.4,9.2,9.3,9.6,9.2],"ir":0,"wk":[5.6,7.0,1.5,11.2,13.4,14.8,14.1,6.0]},"4892":{"n":"Baker Mayfield","pos":"QB","nfl":"TB","st":"","age":31,"v":8.2,"g":5,"ppg":9.0,"l3":6.8,"sd":5.6,"E":[12.2,0.0,13.5,11.5,12.0,11.7,12.0,11.2,10.9],"ir":0,"wk":[11.6,13.2,12.3,null,null,null,6.7,1.4]},"4984":{"n":"Josh Allen","pos":"QB","nfl":"BUF","st":"","age":30,"v":26.9,"g":7,"ppg":27.5,"l3":25.8,"sd":7.7,"E":[24.7,25.8,27.2,25.0,25.3,25.9,26.5,25.0,27.2],"ir":0,"wk":[35.7,40.8,19.5,19.5,31.5,18.3,null,27.6]},"5947":{"n":"Jakobi Meyers","pos":"WR","nfl":"JAX","st":"Questionable","age":29,"v":8.8,"g":7,"ppg":9.3,"l3":7.8,"sd":5.9,"E":[9.1,9.9,9.7,9.9,9.9,9.7,9.7,10.1,10.2],"ir":0,"wk":[12.2,3.8,19.4,6.3,5.7,13.3,null,4.4]},"7567":{"n":"Kenny Gainwell","pos":"RB","nfl":"TB","st":"","age":27,"v":7.4,"g":8,"ppg":6.6,"l3":8.7,"sd":5.0,"E":[7.3,0.0,7.2,7.0,7.0,6.8,7.1,6.8,6.7],"ir":0,"wk":[2.8,4.5,3.0,10.7,5.8,3.4,8.8,14.0]},"8111":{"n":"Cade Otton","pos":"TE","nfl":"TB","st":"","age":27,"v":3.2,"g":8,"ppg":4.7,"l3":0.5,"sd":4.6,"E":[5.4,0.0,6.0,5.4,5.7,5.6,5.7,5.5,5.3],"ir":0,"wk":[5.6,8.8,8.6,7.7,5.5,1.4,0.0,0.0]},"8126":{"n":"Wan'Dale Robinson","pos":"WR","nfl":"TEN","st":"","age":25,"v":9.3,"g":8,"ppg":9.7,"l3":8.5,"sd":5.9,"E":[0.0,10.1,10.7,10.2,10.8,10.7,10.2,10.3,10.3],"ir":0,"wk":[8.8,1.9,18.7,11.0,11.3,5.2,4.7,15.7]},"8142":{"n":"Alec Pierce","pos":"WR","nfl":"IND","st":"IR","age":26,"v":5.5,"g":2,"ppg":6.1,"l3":6.1,"sd":6.0,"E":[0.0,0.0,8.3,8.3,0.0,8.0,8.7,8.6,8.0],"ir":1,"wk":[10.1,2.1,null,null,null,null,null,null]},"8150":{"n":"Kyren Williams","pos":"RB","nfl":"LAR","st":"","age":26,"v":16.9,"g":8,"ppg":18.8,"l3":13.6,"sd":7.3,"E":[17.9,18.1,0.0,18.1,17.4,17.3,18.6,17.0,17.4],"ir":0,"wk":[15.5,15.7,21.8,36.7,19.6,9.7,18.1,12.9]},"LAR":{"n":"Los Angeles Rams","pos":"DEF","nfl":"LAR","st":"","age":null,"v":5.6,"g":8,"ppg":5.5,"l3":5.7,"sd":9.2,"E":[6.5,6.4,0.0,7.3,7.3,7.3,6.1,6.1,6.4],"ir":0,"wk":[2.0,12.0,4.0,6.0,3.0,4.0,2.0,11.0]},"10222":{"n":"Jayden Reed","pos":"WR","nfl":"GB","st":"IR","age":26,"v":2.9,"g":2,"ppg":3.2,"l3":3.2,"sd":5.6,"E":[0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0],"ir":1,"wk":[5.0,1.4,null,null,null,null,null,null]},"11539":{"n":"Jake Bates","pos":"K","nfl":"DET","st":"","age":27,"v":8.9,"g":7,"ppg":9.1,"l3":8.3,"sd":4.1,"E":[7.8,7.8,7.8,7.8,7.8,8.0,7.8,8.0,7.5],"ir":0,"wk":[7.0,7.0,7.0,18.0,10.0,null,9.0,6.0]},"11563":{"n":"Bo Nix","pos":"QB","nfl":"DEN","st":"","age":26,"v":15.4,"g":8,"ppg":14.8,"l3":16.6,"sd":7.5,"E":[15.5,0.0,16.8,15.9,17.4,16.0,16.8,16.0,15.3],"ir":0,"wk":[6.4,15.1,25.1,13.6,7.9,4.5,26.2,19.3]},"11610":{"n":"Malik Washington","pos":"WR","nfl":"MIA","st":"","age":25,"v":10.6,"g":7,"ppg":10.2,"l3":11.2,"sd":4.7,"E":[10.7,10.3,10.0,10.2,9.8,10.5,10.3,10.3,10.1],"ir":0,"wk":[6.3,8.7,11.1,12.0,12.1,null,6.5,15.0]},"11628":{"n":"Marvin Harrison Jr.","pos":"WR","nfl":"HOU","st":"","age":24,"v":6.2,"g":6,"ppg":5.6,"l3":7.4,"sd":4.8,"E":[5.6,5.5,5.6,5.6,5.7,5.9,5.6,5.5,5.7],"ir":0,"wk":[4.3,0.0,7.0,8.2,null,6.4,7.6,null]},"12529":{"n":"TreVeyon Henderson","pos":"RB","nfl":"NE","st":"Questionable","age":24,"v":5.1,"g":6,"ppg":5.6,"l3":4.0,"sd":5.1,"E":[5.5,5.8,0.0,5.6,5.5,5.2,5.3,5.4,5.4],"ir":0,"wk":[null,13.6,3.9,4.2,4.8,3.0,4.3,null]},"13276":{"n":"Omar Cooper Jr.","pos":"WR","nfl":"NYJ","st":"","age":22,"v":13.2,"g":4,"ppg":12.2,"l3":14.9,"sd":8.7,"E":[11.5,10.9,11.1,11.5,0.0,10.6,11.4,10.9,10.6],"ir":0,"wk":[4.0,null,null,null,null,22.3,22.5,0.0]},"13833":{"n":"Dominic Zvada","pos":"K","nfl":"NYG","st":"","age":23,"v":7.5,"g":7,"ppg":8.1,"l3":6.3,"sd":4.3,"E":[7.0,7.2,7.0,7.0,7.0,7.0,7.2,7.4,7.5],"ir":0,"wk":[4.0,8.0,12.0,14.0,10.0,8.0,1.0,null]},"3198":{"n":"Derrick Henry","pos":"RB","nfl":"BAL","st":"","age":32,"v":14.0,"g":8,"ppg":17.1,"l3":8.3,"sd":8.3,"E":[12.9,15.2,15.9,14.7,0.0,14.5,14.6,14.9,15.9],"ir":0,"wk":[35.3,17.7,21.9,15.9,21.0,5.0,5.9,14.0]},"3634":{"n":"Kalif Raymond","pos":"WR","nfl":"CHI","st":"","age":32,"v":6.5,"g":8,"ppg":7.9,"l3":3.7,"sd":6.8,"E":[7.0,0.0,7.1,7.4,7.0,7.5,7.0,7.1,7.4],"ir":0,"wk":[16.4,9.0,21.0,2.6,3.4,3.8,0.0,7.3]},"4217":{"n":"George Kittle","pos":"TE","nfl":"SF","st":"","age":33,"v":14.4,"g":7,"ppg":14.9,"l3":13.4,"sd":6.7,"E":[14.8,15.7,14.6,14.7,15.2,14.7,15.2,14.8,14.8],"ir":0,"wk":[3.2,18.0,26.2,17.0,7.4,17.9,14.8,null]},"4881":{"n":"Lamar Jackson","pos":"QB","nfl":"BAL","st":"Out","age":29,"v":15.0,"g":5,"ppg":16.0,"l3":13.1,"sd":7.8,"E":[0.0,0.0,0.0,0.0,0.0,18.3,18.3,18.0,18.7],"ir":0,"wk":[25.0,15.8,20.4,18.9,null,null,null,0.0]},"4993":{"n":"Mike Gesicki","pos":"TE","nfl":"CIN","st":"","age":31,"v":11.0,"g":7,"ppg":11.0,"l3":10.9,"sd":6.1,"E":[10.6,9.5,9.9,9.5,9.3,9.2,9.3,9.5,9.4],"ir":0,"wk":[18.8,0.0,12.7,13.0,7.4,null,7.6,17.6]},"5012":{"n":"Mark Andrews","pos":"TE","nfl":"BAL","st":"","age":31,"v":5.7,"g":8,"ppg":6.8,"l3":3.7,"sd":4.7,"E":[6.6,7.0,6.7,7.0,0.0,7.1,7.0,6.7,7.1],"ir":0,"wk":[8.9,10.9,5.4,13.7,4.8,1.4,5.3,4.4]},"7525":{"n":"DeVonta Smith","pos":"WR","nfl":"PHI","st":"Questionable","age":27,"v":18.3,"g":4,"ppg":17.2,"l3":20.2,"sd":7.1,"E":[15.6,0.0,15.4,15.8,15.8,15.3,14.8,15.3,15.0],"ir":0,"wk":[8.3,27.7,12.5,null,null,20.5,null,null]},"7547":{"n":"Amon-Ra St. Brown","pos":"WR","nfl":"DET","st":"","age":27,"v":18.9,"g":7,"ppg":20.1,"l3":16.6,"sd":8.0,"E":[19.6,18.7,19.4,19.3,18.8,19.5,18.2,19.1,19.4],"ir":0,"wk":[28.7,35.2,11.9,15.5,12.9,null,24.2,12.6]},"PHI":{"n":"Philadelphia Eagles","pos":"DEF","nfl":"PHI","st":"","age":null,"v":2.5,"g":8,"ppg":3.1,"l3":1.3,"sd":9.1,"E":[4.5,0.0,5.3,5.3,5.3,5.3,4.6,4.7,4.3],"ir":0,"wk":[4.0,4.0,1.0,5.0,7.0,3.0,-4.0,5.0]},"10229":{"n":"Rashee Rice","pos":"WR","nfl":"KC","st":"","age":26,"v":11.3,"g":5,"ppg":11.3,"l3":11.4,"sd":6.5,"E":[13.6,13.1,13.9,13.0,12.8,13.6,13.0,12.9,13.3],"ir":0,"wk":[9.9,12.3,15.8,0.0,null,null,null,18.3]},"11586":{"n":"Blake Corum","pos":"RB","nfl":"LAR","st":"","age":25,"v":11.9,"g":8,"ppg":10.3,"l3":14.8,"sd":5.8,"E":[9.6,9.5,0.0,9.6,9.3,9.2,9.8,9.0,9.1],"ir":0,"wk":[5.4,10.2,3.5,3.1,16.2,14.0,17.1,13.3]},"11646":{"n":"Jalen Coker","pos":"WR","nfl":"CAR","st":"","age":25,"v":11.8,"g":6,"ppg":13.2,"l3":9.1,"sd":9.2,"E":[12.8,13.5,13.4,13.7,12.8,13.5,13.7,13.6,13.0],"ir":0,"wk":[33.8,14.6,3.8,null,null,15.7,1.9,9.6]},"12495":{"n":"Ollie Gordon II","pos":"RB","nfl":"MIA","st":"","age":22,"v":11.3,"g":7,"ppg":10.3,"l3":13.0,"sd":7.0,"E":[12.1,12.4,12.0,12.1,12.0,12.7,12.2,12.2,12.1],"ir":0,"wk":[0.0,0.7,14.5,18.0,14.8,null,17.3,6.9]},"12512":{"n":"Quinshon Judkins","pos":"RB","nfl":"CLE","st":"","age":23,"v":12.5,"g":7,"ppg":12.4,"l3":12.8,"sd":6.6,"E":[12.4,11.1,0.0,11.6,12.0,10.9,11.7,10.7,11.6],"ir":0,"wk":[7.0,9.8,9.9,21.6,8.0,null,23.4,6.9]},"12545":{"n":"Tyler Shough","pos":"QB","nfl":"NO","st":"","age":27,"v":17.3,"g":7,"ppg":18.8,"l3":14.5,"sd":7.7,"E":[16.4,16.7,17.7,17.4,17.2,16.6,17.3,19.0,16.4],"ir":0,"wk":[25.2,22.4,24.8,15.9,1.8,27.0,14.8,null]},"1466":{"n":"Travis Kelce","pos":"TE","nfl":"KC","st":"","age":37,"v":11.0,"g":7,"ppg":11.7,"l3":9.8,"sd":6.2,"E":[12.2,11.9,12.6,11.9,11.7,12.3,11.9,11.8,12.2],"ir":0,"wk":[10.1,25.1,13.9,3.5,null,9.3,8.4,11.7]},"1945":{"n":"Chris Boswell","pos":"K","nfl":"PIT","st":"","age":35,"v":10.5,"g":8,"ppg":9.6,"l3":12.0,"sd":4.5,"E":[0.0,8.2,8.2,8.2,8.2,8.2,8.2,8.2,8.4],"ir":0,"wk":[8.0,4.0,13.0,3.0,13.0,17.0,11.0,8.0]},"2216":{"n":"Mike Evans","pos":"WR","nfl":"SF","st":"Questionable","age":33,"v":15.6,"g":6,"ppg":14.8,"l3":17.1,"sd":6.1,"E":[16.1,17.8,16.4,16.6,17.2,16.5,17.2,16.6,16.7],"ir":1,"wk":[16.9,8.4,12.4,12.6,26.3,12.4,null,null]},"3257":{"n":"Jacoby Brissett","pos":"QB","nfl":"ARI","st":"","age":33,"v":13.0,"g":8,"ppg":14.8,"l3":9.6,"sd":7.4,"E":[0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0],"ir":0,"wk":[16.5,7.5,25.6,13.4,26.3,7.9,16.5,4.5]},"5001":{"n":"Dalton Schultz","pos":"TE","nfl":"HOU","st":"","age":30,"v":8.7,"g":7,"ppg":9.3,"l3":7.6,"sd":6.8,"E":[8.6,8.5,8.7,8.6,8.8,9.1,8.6,8.4,8.7],"ir":0,"wk":[7.5,26.0,6.0,2.9,6.0,7.3,9.5,null]},"5022":{"n":"Dallas Goedert","pos":"TE","nfl":"PHI","st":"","age":31,"v":10.3,"g":6,"ppg":10.7,"l3":9.7,"sd":6.5,"E":[10.0,0.0,10.5,10.8,10.8,10.4,10.1,10.4,10.2],"ir":0,"wk":[23.7,1.4,null,null,9.8,12.1,9.8,7.2]},"8138":{"n":"James Cook III","pos":"RB","nfl":"BUF","st":"","age":27,"v":19.8,"g":7,"ppg":18.8,"l3":21.7,"sd":5.3,"E":[17.4,18.2,18.8,17.9,18.3,18.5,19.2,18.3,18.7],"ir":0,"wk":[9.9,20.9,19.4,16.3,22.8,24.3,null,18.1]},"8183":{"n":"Brock Purdy","pos":"QB","nfl":"SF","st":"","age":26,"v":19.6,"g":7,"ppg":21.4,"l3":16.2,"sd":6.2,"E":[21.0,22.2,20.0,20.4,21.6,20.2,21.3,20.5,20.6],"ir":0,"wk":[22.1,28.5,31.3,19.6,17.2,17.4,14.0,null]},"JAX":{"n":"Jacksonville Jaguars","pos":"DEF","nfl":"JAX","st":"","age":null,"v":8.8,"g":7,"ppg":9.4,"l3":7.7,"sd":10.8,"E":[8.1,8.5,8.0,8.0,8.0,8.0,8.0,7.5,8.0],"ir":0,"wk":[15.0,3.0,17.0,8.0,2.0,1.0,null,20.0]},"SEA":{"n":"Seattle Seahawks","pos":"DEF","nfl":"SEA","st":"","age":null,"v":6.9,"g":8,"ppg":7.6,"l3":5.7,"sd":9.4,"E":[8.1,7.1,0.0,7.9,7.9,7.9,7.2,6.8,7.2],"ir":0,"wk":[13.0,8.0,2.0,12.0,9.0,3.0,11.0,3.0]},"10859":{"n":"Sam LaPorta","pos":"TE","nfl":"DET","st":"","age":25,"v":11.4,"g":7,"ppg":12.3,"l3":9.7,"sd":6.7,"E":[12.4,11.8,12.2,12.2,11.8,12.3,11.4,12.0,12.2],"ir":0,"wk":[9.8,17.2,7.4,22.4,19.8,null,2.8,6.5]},"11435":{"n":"Emanuel Wilson","pos":"RB","nfl":"SEA","st":"","age":27,"v":8.8,"g":8,"ppg":9.3,"l3":7.9,"sd":8.4,"E":[4.8,5.3,0.0,5.2,5.3,5.3,5.2,5.2,5.4],"ir":0,"wk":[0.3,9.2,1.4,27.0,13.2,5.2,18.5,0.0]},"11566":{"n":"Jayden Daniels","pos":"QB","nfl":"WAS","st":"","age":25,"v":21.0,"g":5,"ppg":20.1,"l3":22.7,"sd":6.6,"E":[19.6,19.9,19.8,20.9,19.6,19.4,18.6,18.0,18.6],"ir":0,"wk":[17.7,14.7,null,null,32.3,21.0,null,15.0]},"1166":{"n":"Kirk Cousins","pos":"QB","nfl":"LV","st":"","age":38,"v":21.3,"g":8,"ppg":20.6,"l3":22.7,"sd":5.2,"E":[19.3,18.6,18.5,18.9,0.0,19.4,18.5,19.6,21.2],"ir":0,"wk":[15.8,21.2,22.2,23.6,13.7,19.5,20.4,28.2]},"12534":{"n":"Kyle Monangai","pos":"RB","nfl":"CHI","st":"Questionable","age":24,"v":14.2,"g":4,"ppg":14.8,"l3":13.0,"sd":8.4,"E":[10.6,0.0,11.2,11.3,10.6,11.1,10.9,11.0,11.3],"ir":0,"wk":[20.4,7.8,3.1,28.0,null,null,null,null]},"13298":{"n":"KC Concepcion Jr.","pos":"WR","nfl":"CLE","st":"","age":22,"v":10.1,"g":8,"ppg":8.7,"l3":12.6,"sd":6.4,"E":[10.2,9.7,0.0,9.9,10.0,9.5,9.8,9.7,9.8],"ir":0,"wk":[7.8,8.2,2.9,11.4,1.5,7.9,23.2,6.7]},"3271":{"n":"Tyler Higbee","pos":"TE","nfl":"LAR","st":"","age":33,"v":5.7,"g":8,"ppg":7.0,"l3":3.3,"sd":6.6,"E":[6.3,7.8,0.0,7.5,7.2,7.2,7.8,7.1,7.6],"ir":0,"wk":[1.2,0.0,20.2,11.7,13.3,4.2,3.4,2.4]},"4037":{"n":"Chris Godwin Jr.","pos":"WR","nfl":"TB","st":"","age":30,"v":6.0,"g":8,"ppg":6.6,"l3":4.8,"sd":4.5,"E":[7.7,0.0,8.5,7.8,8.2,8.1,8.1,8.0,7.8],"ir":0,"wk":[8.3,8.8,5.5,9.1,7.0,7.7,6.7,0.0]},"5892":{"n":"David Montgomery","pos":"RB","nfl":"HOU","st":"Questionable","age":29,"v":7.3,"g":5,"ppg":9.1,"l3":4.1,"sd":8.7,"E":[9.2,9.1,9.6,9.0,9.0,9.4,8.9,8.8,9.4],"ir":1,"wk":[28.9,4.4,6.8,4.3,1.1,null,null,null]},"6650":{"n":"Chase McLaughlin","pos":"K","nfl":"TB","st":"","age":30,"v":12.0,"g":8,"ppg":11.1,"l3":13.7,"sd":4.5,"E":[9.1,0.0,9.2,9.2,9.2,9.0,9.3,9.4,9.2],"ir":0,"wk":[11.0,16.0,12.0,2.0,7.0,17.0,12.0,12.0]},"7588":{"n":"Javonte Williams","pos":"RB","nfl":"DAL","st":"","age":26,"v":16.0,"g":8,"ppg":17.1,"l3":13.7,"sd":7.5,"E":[17.2,16.4,17.1,16.3,16.0,0.0,16.3,16.3,17.7],"ir":0,"wk":[24.2,8.0,18.3,31.3,14.2,13.0,21.5,6.7]},"7594":{"n":"Chuba Hubbard","pos":"RB","nfl":"CAR","st":"","age":27,"v":18.6,"g":7,"ppg":19.0,"l3":18.0,"sd":6.0,"E":[17.7,18.6,17.7,17.6,16.8,18.3,18.8,17.3,16.8],"ir":0,"wk":[23.7,14.4,15.0,25.9,null,19.1,10.0,24.9]},"8119":{"n":"Jahan Dotson","pos":"WR","nfl":"ATL","st":"","age":26,"v":8.4,"g":8,"ppg":7.5,"l3":10.3,"sd":6.1,"E":[7.6,6.7,0.0,6.6,7.1,6.7,7.2,7.0,6.9],"ir":0,"wk":[2.9,3.1,2.1,13.4,7.4,17.7,1.6,11.5]},"8121":{"n":"Romeo Doubs","pos":"WR","nfl":"NE","st":"IR","age":26,"v":10.7,"g":6,"ppg":9.7,"l3":12.5,"sd":7.3,"E":[0.0,0.0,0.0,9.9,9.7,9.5,9.6,9.9,9.5],"ir":1,"wk":[0.0,12.6,7.9,23.8,2.6,11.2,null,null]},"8137":{"n":"George Pickens","pos":"WR","nfl":"DAL","st":"","age":25,"v":12.7,"g":8,"ppg":13.0,"l3":11.9,"sd":6.7,"E":[13.1,12.3,13.0,12.4,12.3,0.0,12.2,12.7,12.7],"ir":0,"wk":[5.8,10.0,15.2,9.5,28.0,13.3,15.7,6.8]},"9488":{"n":"Jaxon Smith-Njigba","pos":"WR","nfl":"SEA","st":"","age":24,"v":27.3,"g":8,"ppg":27.5,"l3":26.8,"sd":7.9,"E":[25.9,26.3,0.0,25.5,26.8,26.1,25.5,25.3,25.5],"ir":0,"wk":[26.2,42.5,35.4,12.6,22.8,25.4,31.3,23.8]},"9753":{"n":"Zach Charbonnet","pos":"RB","nfl":"SEA","st":"","age":25,"v":4.7,"g":1,"ppg":5.9,"l3":5.9,"sd":6.7,"E":[9.7,9.8,0.0,8.8,10.1,9.9,8.7,8.8,9.8],"ir":0,"wk":[null,null,null,null,null,null,null,5.9]},"NE":{"n":"New England Patriots","pos":"DEF","nfl":"NE","st":"","age":null,"v":6.6,"g":8,"ppg":7.2,"l3":5.3,"sd":10.3,"E":[6.6,6.2,0.0,6.9,6.9,6.9,5.8,7.1,6.8],"ir":0,"wk":[6.0,23.0,-1.0,6.0,8.0,6.0,2.0,8.0]},"10236":{"n":"Dalton Kincaid","pos":"TE","nfl":"BUF","st":"","age":27,"v":11.2,"g":7,"ppg":11.3,"l3":11.0,"sd":7.3,"E":[10.5,10.8,11.3,10.4,10.6,10.8,10.9,10.3,11.3],"ir":0,"wk":[18.0,22.5,3.8,1.7,3.7,10.8,null,18.6]},"4147":{"n":"Samaje Perine","pos":"RB","nfl":"CIN","st":"","age":31,"v":6.8,"g":7,"ppg":5.8,"l3":8.8,"sd":5.5,"E":[6.7,6.3,6.5,6.5,6.2,6.2,6.5,6.5,6.3],"ir":0,"wk":[8.0,3.2,2.4,0.7,15.8,null,7.6,2.9]},"4227":{"n":"Harrison Butker","pos":"K","nfl":"KC","st":"","age":31,"v":7.3,"g":7,"ppg":7.7,"l3":6.7,"sd":4.2,"E":[6.8,7.0,6.8,6.8,6.8,6.7,6.8,6.8,6.8],"ir":0,"wk":[7.0,16.0,5.0,6.0,null,11.0,3.0,6.0]},"6130":{"n":"Devin Singletary","pos":"RB","nfl":"NYG","st":"","age":29,"v":7.7,"g":4,"ppg":8.4,"l3":6.6,"sd":6.3,"E":[8.3,8.0,7.2,7.5,7.0,6.9,7.2,7.6,7.6],"ir":0,"wk":[13.8,0.9,null,null,null,4.3,14.5,null]},"6804":{"n":"Jordan Love","pos":"QB","nfl":"GB","st":"","age":28,"v":19.8,"g":8,"ppg":19.4,"l3":20.6,"sd":5.0,"E":[18.6,17.5,0.0,17.8,18.8,18.9,20.3,19.3,18.9],"ir":0,"wk":[20.5,13.8,19.5,14.1,25.3,21.2,18.0,22.5]},"6904":{"n":"Jalen Hurts","pos":"QB","nfl":"PHI","st":"IR","age":28,"v":15.5,"g":5,"ppg":16.6,"l3":13.4,"sd":5.6,"E":[0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0],"ir":1,"wk":[24.7,18.2,13.6,13.5,13.0,null,null,null]},"7569":{"n":"Nico Collins","pos":"WR","nfl":"HOU","st":"","age":27,"v":12.7,"g":5,"ppg":15.2,"l3":8.0,"sd":8.6,"E":[14.8,14.6,14.9,14.8,15.1,15.7,14.9,14.5,15.0],"ir":0,"wk":[21.2,null,null,30.8,10.6,10.9,2.6,null]},"7611":{"n":"Rhamondre Stevenson","pos":"RB","nfl":"NE","st":"","age":28,"v":12.5,"g":8,"ppg":12.4,"l3":12.7,"sd":6.7,"E":[12.3,12.9,0.0,12.3,12.1,11.6,11.8,12.1,12.1],"ir":0,"wk":[14.5,3.6,6.8,18.4,17.5,3.6,22.5,12.0]},"8110":{"n":"Jake Ferguson","pos":"TE","nfl":"DAL","st":"Questionable","age":27,"v":4.0,"g":8,"ppg":5.6,"l3":1.1,"sd":6.2,"E":[6.2,6.1,6.6,6.1,6.1,0.0,6.0,6.3,6.4],"ir":0,"wk":[2.6,20.3,9.3,4.1,4.9,3.3,0.0,0.0]},"8134":{"n":"Khalil Shakir","pos":"WR","nfl":"BUF","st":"","age":26,"v":10.3,"g":7,"ppg":9.5,"l3":11.9,"sd":5.1,"E":[9.7,9.6,10.2,9.3,9.4,9.6,9.7,9.2,10.2],"ir":0,"wk":[9.0,6.8,1.6,13.2,11.0,13.4,null,11.4]},"8135":{"n":"Treylon Burks","pos":"WR","nfl":"WAS","st":"","age":26,"v":8.2,"g":6,"ppg":7.9,"l3":8.8,"sd":5.4,"E":[6.9,6.8,7.0,7.1,7.0,6.8,6.7,6.5,6.8],"ir":0,"wk":[null,0.0,9.3,11.7,4.6,10.6,null,11.1]},"8146":{"n":"Garrett Wilson","pos":"WR","nfl":"NYJ","st":"","age":26,"v":12.4,"g":8,"ppg":14.2,"l3":9.1,"sd":7.2,"E":[13.4,13.8,14.2,15.1,0.0,13.3,14.8,13.8,13.3],"ir":0,"wk":[13.9,16.7,26.7,5.7,23.4,8.4,4.6,14.3]},"8148":{"n":"Jameson Williams","pos":"WR","nfl":"DET","st":"","age":25,"v":16.6,"g":7,"ppg":14.4,"l3":20.6,"sd":6.7,"E":[14.6,13.7,14.1,14.1,13.7,14.2,13.4,14.0,14.2],"ir":0,"wk":[8.5,5.3,8.9,16.2,18.7,null,26.1,17.0]},"8167":{"n":"Christian Watson","pos":"WR","nfl":"GB","st":"Questionable","age":27,"v":16.3,"g":8,"ppg":18.4,"l3":12.5,"sd":8.5,"E":[16.3,16.0,0.0,16.2,16.7,16.4,17.6,17.0,16.7],"ir":0,"wk":[32.7,14.1,22.6,7.7,32.3,9.4,10.7,17.3]},"8228":{"n":"Jaylen Warren","pos":"RB","nfl":"PIT","st":"","age":28,"v":17.0,"g":8,"ppg":17.6,"l3":15.9,"sd":7.9,"E":[0.0,16.7,15.2,15.7,15.6,15.3,15.5,16.6,16.1],"ir":0,"wk":[10.3,9.7,20.6,15.6,36.8,9.8,16.7,21.3]},"96":{"n":"Aaron Rodgers","pos":"QB","nfl":"PIT","st":"","age":42,"v":14.2,"g":8,"ppg":15.4,"l3":12.0,"sd":7.0,"E":[0.0,14.9,14.3,14.0,15.0,14.3,14.6,14.2,15.1],"ir":0,"wk":[12.5,5.0,23.7,24.0,22.0,17.0,13.1,5.9]},"DEN":{"n":"Denver Broncos","pos":"DEF","nfl":"DEN","st":"","age":null,"v":7.5,"g":8,"ppg":7.9,"l3":6.7,"sd":9.7,"E":[7.9,0.0,7.7,7.7,7.7,7.7,7.1,7.0,7.1],"ir":0,"wk":[3.0,8.0,14.0,3.0,15.0,14.0,4.0,2.0]},"11632":{"n":"Malik Nabers","pos":"WR","nfl":"NYG","st":"","age":23,"v":20.0,"g":7,"ppg":17.2,"l3":25.2,"sd":8.8,"E":[17.9,18.4,17.6,17.7,17.2,17.0,17.2,18.4,18.5],"ir":0,"wk":[12.9,1.1,7.6,23.2,29.1,28.5,18.1,null]},"11637":{"n":"Keon Coleman","pos":"WR","nfl":"BUF","st":"","age":23,"v":9.1,"g":7,"ppg":9.5,"l3":8.3,"sd":7.3,"E":[8.0,8.3,8.7,8.1,8.2,8.4,8.4,8.0,8.8],"ir":0,"wk":[1.1,12.3,4.7,23.6,7.7,15.9,null,1.4]},"11786":{"n":"Cam Little","pos":"K","nfl":"JAX","st":"","age":23,"v":8.5,"g":7,"ppg":8.7,"l3":8.0,"sd":3.7,"E":[7.5,7.4,7.4,7.4,7.4,7.6,7.7,7.9,7.6],"ir":0,"wk":[12.0,7.0,4.0,14.0,8.0,10.0,null,6.0]},"12474":{"n":"Woody Marks","pos":"RB","nfl":"HOU","st":"","age":25,"v":9.5,"g":7,"ppg":8.9,"l3":10.6,"sd":4.3,"E":[9.4,9.0,9.5,8.9,9.0,9.2,8.8,8.7,9.3],"ir":0,"wk":[5.0,8.5,9.1,8.2,12.5,10.1,9.1,null]},"4034":{"n":"Christian McCaffrey","pos":"RB","nfl":"SF","st":"Questionable","age":30,"v":21.5,"g":7,"ppg":20.6,"l3":23.3,"sd":5.8,"E":[22.1,22.0,20.4,20.5,21.9,20.7,21.4,20.7,20.7],"ir":0,"wk":[13.8,22.6,21.6,16.0,17.3,30.7,22.0,null]},"4454":{"n":"Kendrick Bourne","pos":"WR","nfl":"ARI","st":"IR","age":31,"v":6.3,"g":8,"ppg":6.5,"l3":5.8,"sd":5.6,"E":[0.0,0.0,0.0,0.0,0.0,0.0,6.7,6.8,6.8],"ir":1,"wk":[15.5,3.1,4.2,0.0,12.0,9.7,3.9,3.9]},"4983":{"n":"DJ Moore","pos":"WR","nfl":"BUF","st":"Questionable","age":29,"v":10.6,"g":5,"ppg":10.6,"l3":10.7,"sd":7.5,"E":[11.8,12.4,13.3,12.0,12.2,12.5,12.7,11.8,13.3],"ir":0,"wk":[21.0,-0.1,12.7,2.7,null,null,null,16.6]},"5045":{"n":"Courtland Sutton","pos":"WR","nfl":"DEN","st":"","age":31,"v":6.3,"g":8,"ppg":6.0,"l3":6.9,"sd":4.5,"E":[7.1,0.0,7.4,7.4,8.0,7.3,7.5,7.1,7.2],"ir":0,"wk":[3.1,5.5,7.6,1.4,9.8,3.9,7.5,9.3]},"6801":{"n":"Tee Higgins","pos":"WR","nfl":"CIN","st":"","age":27,"v":21.0,"g":7,"ppg":19.9,"l3":22.8,"sd":9.5,"E":[18.8,18.0,18.6,17.9,17.6,17.4,17.5,17.9,17.8],"ir":0,"wk":[8.9,14.5,21.0,26.7,4.2,null,26.8,37.5]},"7002":{"n":"Juwan Johnson","pos":"TE","nfl":"NO","st":"","age":30,"v":7.1,"g":7,"ppg":9.6,"l3":2.4,"sd":7.0,"E":[8.6,8.7,9.2,9.2,9.1,8.7,9.2,9.5,8.9],"ir":0,"wk":[14.4,10.6,23.3,11.9,5.6,0.0,1.7,null]},"7021":{"n":"Rico Dowdle","pos":"RB","nfl":"PIT","st":"","age":28,"v":9.8,"g":5,"ppg":8.9,"l3":11.4,"sd":5.2,"E":[0.0,9.7,8.7,9.0,9.0,8.7,8.9,9.5,9.3],"ir":0,"wk":[4.1,6.4,null,null,null,7.9,14.6,11.6]},"7523":{"n":"Trevor Lawrence","pos":"QB","nfl":"JAX","st":"","age":27,"v":21.0,"g":7,"ppg":19.7,"l3":23.5,"sd":6.8,"E":[20.4,21.4,21.6,21.4,21.7,21.2,21.2,22.2,22.7],"ir":0,"wk":[26.1,7.2,20.8,13.1,22.7,28.3,null,19.4]},"9221":{"n":"Jahmyr Gibbs","pos":"RB","nfl":"DET","st":"","age":24,"v":27.5,"g":7,"ppg":28.0,"l3":26.6,"sd":8.2,"E":[26.6,26.5,26.1,27.6,26.1,26.9,25.3,27.4,27.5],"ir":0,"wk":[33.6,23.3,41.4,17.7,37.7,null,17.3,24.8]},"9480":{"n":"Brenton Strange","pos":"TE","nfl":"JAX","st":"","age":25,"v":9.8,"g":7,"ppg":9.6,"l3":10.2,"sd":5.0,"E":[9.8,10.7,10.4,10.7,10.6,10.5,10.5,10.9,10.9],"ir":0,"wk":[10.3,3.7,6.2,16.5,13.8,9.4,null,7.5]},"9484":{"n":"Tucker Kraft","pos":"TE","nfl":"GB","st":"","age":26,"v":12.0,"g":8,"ppg":11.1,"l3":13.6,"sd":5.2,"E":[11.9,11.1,0.0,11.3,11.7,11.4,12.4,11.9,11.7],"ir":0,"wk":[9.5,3.5,6.6,16.5,11.6,8.7,14.8,17.3]},"9758":{"n":"C.J. Stroud","pos":"QB","nfl":"HOU","st":"","age":25,"v":19.2,"g":7,"ppg":18.5,"l3":20.5,"sd":5.2,"E":[17.7,17.4,18.0,17.6,17.9,19.4,17.2,17.2,17.9],"ir":0,"wk":[16.5,17.0,11.7,23.1,20.9,24.0,16.5,null]},"HOU":{"n":"Houston Texans","pos":"DEF","nfl":"HOU","st":"","age":null,"v":6.2,"g":7,"ppg":6.0,"l3":6.7,"sd":10.2,"E":[7.4,6.7,7.1,7.1,7.1,7.1,6.4,6.9,6.3],"ir":0,"wk":[-1.0,6.0,13.0,4.0,16.0,1.0,3.0,null]},"11564":{"n":"Drake Maye","pos":"QB","nfl":"NE","st":"","age":24,"v":22.4,"g":8,"ppg":21.1,"l3":24.9,"sd":9.5,"E":[21.9,23.1,0.0,21.6,21.7,20.2,20.7,21.6,20.7],"ir":0,"wk":[12.8,9.0,5.8,27.2,39.5,23.8,28.4,22.5]},"11576":{"n":"Braelon Allen","pos":"RB","nfl":"NYJ","st":"","age":22,"v":14.5,"g":8,"ppg":12.4,"l3":18.4,"sd":6.7,"E":[12.5,12.5,12.6,12.9,0.0,12.5,12.7,12.6,11.9],"ir":0,"wk":[4.0,8.5,4.7,8.7,18.6,12.4,19.4,23.3]},"11625":{"n":"Adonai Mitchell","pos":"WR","nfl":"NYJ","st":"","age":24,"v":12.5,"g":4,"ppg":12.1,"l3":13.2,"sd":8.4,"E":[10.5,9.5,9.7,10.2,0.0,9.3,10.1,9.5,9.3],"ir":0,"wk":[9.0,12.3,null,null,null,null,0.0,27.2]},"12506":{"n":"Harold Fannin Jr.","pos":"TE","nfl":"CLE","st":"","age":22,"v":11.8,"g":8,"ppg":11.3,"l3":12.8,"sd":7.7,"E":[11.6,11.3,0.0,11.4,11.5,11.1,11.3,11.2,11.3],"ir":0,"wk":[4.1,10.4,24.1,11.7,1.4,1.9,13.1,23.4]},"2747":{"n":"Jason Myers","pos":"K","nfl":"SEA","st":"","age":35,"v":7.3,"g":8,"ppg":8.4,"l3":5.3,"sd":5.5,"E":[7.4,7.2,0.0,7.1,7.1,7.2,7.0,7.1,7.1],"ir":0,"wk":[7.0,7.0,9.0,5.0,23.0,7.0,8.0,1.0]},"4035":{"n":"Alvin Kamara","pos":"RB","nfl":"NO","st":"","age":31,"v":10.7,"g":6,"ppg":11.0,"l3":10.2,"sd":6.8,"E":[10.1,6.7,6.7,6.7,6.7,6.7,6.6,6.7,6.6],"ir":0,"wk":[null,7.2,5.1,22.8,2.6,14.9,13.2,null]},"4046":{"n":"Patrick Mahomes","pos":"QB","nfl":"KC","st":"","age":31,"v":17.1,"g":7,"ppg":18.5,"l3":14.6,"sd":7.1,"E":[19.2,17.8,20.3,18.7,17.5,18.7,18.0,17.9,18.5],"ir":0,"wk":[22.7,29.0,16.9,17.0,null,11.5,7.0,25.4]},"5846":{"n":"DK Metcalf","pos":"WR","nfl":"PIT","st":"","age":28,"v":9.7,"g":8,"ppg":9.7,"l3":9.8,"sd":6.1,"E":[0.0,10.4,9.8,9.5,10.2,10.1,10.1,9.7,10.5],"ir":0,"wk":[8.0,6.7,12.1,16.5,5.3,20.3,7.6,1.4]},"5859":{"n":"A.J. Brown","pos":"WR","nfl":"NE","st":"Questionable","age":29,"v":6.4,"g":3,"ppg":6.4,"l3":6.4,"sd":5.2,"E":[10.7,12.0,0.0,11.4,10.9,10.4,10.7,11.4,10.5],"ir":0,"wk":[5.6,null,null,null,null,5.7,7.8,null]},"5967":{"n":"Tony Pollard","pos":"RB","nfl":"TEN","st":"","age":29,"v":18.0,"g":8,"ppg":14.6,"l3":24.3,"sd":9.8,"E":[0.0,13.4,14.3,13.4,14.0,14.5,14.2,14.2,13.6],"ir":0,"wk":[4.4,7.5,13.6,13.0,5.2,7.6,36.5,28.7]},"6790":{"n":"D'Andre Swift","pos":"RB","nfl":"CHI","st":"","age":27,"v":20.4,"g":8,"ppg":18.8,"l3":23.3,"sd":7.6,"E":[18.5,0.0,17.9,18.2,17.1,17.9,17.4,17.7,18.3],"ir":0,"wk":[32.4,12.9,10.8,7.4,17.3,23.0,19.0,27.9]},"7564":{"n":"Ja'Marr Chase","pos":"WR","nfl":"CIN","st":"","age":26,"v":19.8,"g":7,"ppg":18.3,"l3":22.7,"sd":8.8,"E":[19.8,19.2,19.9,19.1,18.7,18.5,18.6,19.1,19.0],"ir":0,"wk":[3.2,26.5,24.8,5.7,19.7,null,17.2,31.1]},"8155":{"n":"Breece Hall","pos":"RB","nfl":"NYJ","st":"Questionable","age":25,"v":14.2,"g":3,"ppg":14.2,"l3":14.2,"sd":5.9,"E":[10.6,11.2,11.4,11.7,0.0,11.1,11.5,11.3,10.6],"ir":0,"wk":[19.8,14.2,8.5,null,null,null,null,null]},"9486":{"n":"Dontayvion Wicks","pos":"WR","nfl":"PHI","st":"Questionable","age":25,"v":8.2,"g":6,"ppg":8.9,"l3":6.8,"sd":5.4,"E":[6.9,0.0,7.1,7.3,7.3,7.0,6.8,7.0,6.9],"ir":1,"wk":[15.3,12.4,5.2,4.8,11.3,4.4,null,null]},"9500":{"n":"Josh Downs","pos":"WR","nfl":"IND","st":"","age":25,"v":8.6,"g":8,"ppg":8.7,"l3":8.3,"sd":4.9,"E":[9.7,9.8,9.1,9.1,0.0,8.8,9.4,9.3,8.8],"ir":0,"wk":[5.7,14.2,12.7,4.6,7.7,8.7,3.8,12.3]},"9756":{"n":"Jordan Addison","pos":"WR","nfl":"MIN","st":"","age":24,"v":8.2,"g":6,"ppg":8.2,"l3":8.3,"sd":6.6,"E":[8.3,8.5,8.2,8.2,8.1,8.2,8.8,8.9,8.4],"ir":0,"wk":[0.0,4.1,20.0,9.1,null,null,4.3,11.6]},"MIN":{"n":"Minnesota Vikings","pos":"DEF","nfl":"MIN","st":"","age":null,"v":10.9,"g":7,"ppg":11.7,"l3":9.3,"sd":9.6,"E":[8.6,8.6,9.1,9.1,9.1,9.1,8.8,9.3,9.4],"ir":0,"wk":[10.0,18.0,17.0,9.0,11.0,null,10.0,7.0]},"10232":{"n":"Michael Wilson","pos":"WR","nfl":"ARI","st":"Questionable","age":26,"v":14.0,"g":8,"ppg":13.6,"l3":14.9,"sd":7.7,"E":[13.4,13.3,13.4,14.6,13.4,0.0,13.8,13.8,14.0],"ir":0,"wk":[10.6,3.8,25.9,16.5,7.3,7.2,10.6,26.8]},"11631":{"n":"Brian Thomas Jr.","pos":"WR","nfl":"JAX","st":"","age":24,"v":4.1,"g":7,"ppg":4.8,"l3":2.7,"sd":5.1,"E":[4.0,3.9,3.8,3.9,3.9,3.9,3.8,4.0,4.0],"ir":0,"wk":[7.0,7.0,1.8,9.7,0.0,0.0,null,8.2]},"11635":{"n":"Ladd McConkey","pos":"WR","nfl":"LAC","st":"","age":24,"v":7.4,"g":6,"ppg":8.6,"l3":5.1,"sd":6.5,"E":[10.2,9.7,9.7,9.5,9.9,9.9,9.4,10.4,9.3],"ir":0,"wk":[19.2,6.5,10.6,0.0,null,2.7,null,12.6]},"13286":{"n":"Jadarian Price","pos":"RB","nfl":"SEA","st":"","age":23,"v":4.6,"g":4,"ppg":4.9,"l3":4.0,"sd":5.0,"E":[7.0,5.1,0.0,4.7,5.2,5.2,4.6,4.7,5.2],"ir":0,"wk":[7.8,5.0,1.2,null,null,null,null,5.7]},"13414":{"n":"Kaelon Black","pos":"RB","nfl":"SF","st":"","age":25,"v":4.9,"g":7,"ppg":4.4,"l3":5.7,"sd":4.9,"E":[5.3,5.2,4.7,4.7,5.2,4.8,5.1,4.8,4.8],"ir":0,"wk":[8.0,2.5,1.7,1.3,1.6,4.7,10.9,null]},"5844":{"n":"T.J. Hockenson","pos":"TE","nfl":"MIN","st":"","age":29,"v":10.9,"g":7,"ppg":11.2,"l3":10.3,"sd":7.1,"E":[10.8,10.8,10.5,10.6,10.4,10.5,11.2,11.3,10.8],"ir":0,"wk":[13.6,5.9,3.1,24.9,1.7,null,13.5,15.8]},"5849":{"n":"Kyler Murray","pos":"QB","nfl":"MIN","st":"Questionable","age":29,"v":14.5,"g":6,"ppg":12.8,"l3":17.7,"sd":6.6,"E":[15.8,15.4,14.6,14.5,15.0,14.8,16.9,16.7,15.3],"ir":0,"wk":[0.6,null,11.4,11.5,18.3,null,13.9,20.9]},"6770":{"n":"Joe Burrow","pos":"QB","nfl":"CIN","st":"","age":29,"v":27.5,"g":7,"ppg":25.1,"l3":32.0,"sd":7.9,"E":[24.4,23.3,25.0,23.3,22.8,22.4,22.7,23.4,23.0],"ir":0,"wk":[15.2,16.2,22.6,25.7,24.6,null,28.9,42.5]},"6813":{"n":"Jonathan Taylor","pos":"RB","nfl":"IND","st":"","age":27,"v":17.2,"g":8,"ppg":18.0,"l3":15.6,"sd":7.3,"E":[17.3,18.0,17.1,18.3,0.0,16.8,17.6,18.6,17.2],"ir":0,"wk":[25.1,29.2,9.2,22.7,11.2,21.1,19.0,6.7]},"7526":{"n":"Jaylen Waddle","pos":"WR","nfl":"DEN","st":"","age":27,"v":9.9,"g":8,"ppg":9.8,"l3":10.0,"sd":6.4,"E":[10.7,0.0,11.4,11.4,12.2,11.3,11.5,11.0,11.0],"ir":0,"wk":[1.2,21.8,6.4,14.5,4.8,6.4,8.8,14.9]},"7543":{"n":"Travis Etienne Jr.","pos":"RB","nfl":"NO","st":"IR","age":27,"v":10.3,"g":3,"ppg":10.3,"l3":10.3,"sd":5.5,"E":[0.0,10.7,10.6,10.8,10.1,10.6,9.4,10.1,9.6],"ir":1,"wk":[14.8,7.1,9.0,null,null,null,null,null]},"7553":{"n":"Kyle Pitts Sr.","pos":"TE","nfl":"ATL","st":"","age":26,"v":9.9,"g":8,"ppg":8.2,"l3":12.9,"sd":7.2,"E":[9.7,8.6,0.0,8.5,9.2,8.7,9.3,9.0,8.9],"ir":0,"wk":[0.0,2.5,1.5,7.7,15.2,23.0,13.2,2.6]},"7839":{"n":"Evan McPherson","pos":"K","nfl":"CIN","st":"","age":27,"v":7.9,"g":7,"ppg":9.1,"l3":5.7,"sd":4.7,"E":[7.8,7.5,7.5,7.5,7.5,7.5,7.5,7.8,7.4],"ir":0,"wk":[19.0,12.0,11.0,5.0,7.0,null,5.0,5.0]},"8408":{"n":"Jordan Mason","pos":"RB","nfl":"MIN","st":"","age":27,"v":6.9,"g":3,"ppg":6.9,"l3":6.9,"sd":5.7,"E":[7.4,7.7,7.2,7.5,8.2,7.6,8.2,7.7,7.5],"ir":0,"wk":[11.9,null,null,null,null,null,6.8,2.0]},"9487":{"n":"Parker Washington","pos":"WR","nfl":"JAX","st":"","age":24,"v":14.0,"g":7,"ppg":13.6,"l3":14.8,"sd":8.3,"E":[14.1,15.6,15.2,15.5,15.4,15.2,15.2,15.8,15.8],"ir":0,"wk":[19.3,16.8,13.0,2.0,30.4,10.4,null,3.6]},"BAL":{"n":"Baltimore Ravens","pos":"DEF","nfl":"BAL","st":"","age":null,"v":4.2,"g":8,"ppg":4.9,"l3":3.0,"sd":9.1,"E":[4.8,5.9,5.9,5.9,0.0,5.9,5.7,6.3,5.1],"ir":0,"wk":[7.0,3.0,6.0,7.0,7.0,9.0,-2.0,2.0]},"CLE":{"n":"Cleveland Browns","pos":"DEF","nfl":"CLE","st":"","age":null,"v":7.1,"g":8,"ppg":7.1,"l3":7.0,"sd":9.1,"E":[6.9,6.7,0.0,6.5,6.5,6.5,7.0,6.3,6.9],"ir":0,"wk":[1.0,7.0,6.0,9.0,13.0,10.0,6.0,5.0]},"8161":{"n":"Malik Willis","pos":"QB","nfl":"MIA","st":"","age":27,"v":17.2,"g":7,"ppg":15.2,"l3":20.8,"sd":6.9,"E":[17.5,16.3,16.2,16.2,15.4,16.7,16.2,16.2,16.3],"ir":0,"wk":[17.7,12.5,11.0,2.5,20.9,null,26.0,15.6]},"1373":{"n":"Geno Smith","pos":"QB","nfl":"NYJ","st":"","age":36,"v":16.8,"g":8,"ppg":15.8,"l3":18.8,"sd":6.5,"E":[15.8,15.7,15.6,17.0,0.0,14.8,17.3,15.1,14.4],"ir":0,"wk":[9.3,15.6,26.0,8.8,10.0,13.0,24.5,19.0]},"11565":{"n":"J.J. McCarthy","pos":"QB","nfl":"NYG","st":"","age":23,"v":9.2,"g":3,"ppg":9.2,"l3":9.2,"sd":6.9,"E":[13.9,14.7,12.1,13.1,12.1,11.9,12.3,14.8,14.1],"ir":0,"wk":[null,null,null,null,0.2,17.3,10.2,null]},"7042":{"n":"Tyler Bass","pos":"K","nfl":"BUF","st":"","age":29,"v":12.3,"g":7,"ppg":10.9,"l3":15.0,"sd":4.5,"E":[9.5,9.3,9.3,9.3,9.3,9.3,9.2,9.3,9.3],"ir":0,"wk":[13.0,4.0,6.0,8.0,12.0,17.0,null,16.0]},"3451":{"n":"Ka'imi Fairbairn","pos":"K","nfl":"HOU","st":"","age":32,"v":11.5,"g":7,"ppg":10.7,"l3":13.0,"sd":4.3,"E":[9.3,9.1,9.2,9.2,9.2,9.4,9.5,9.2,8.9],"ir":0,"wk":[9.0,6.0,5.0,16.0,17.0,11.0,11.0,null]},"TB":{"n":"Tampa Bay Buccaneers","pos":"DEF","nfl":"TB","st":"","age":null,"v":12.3,"g":8,"ppg":10.0,"l3":16.7,"sd":10.5,"E":[8.8,0.0,9.2,9.2,9.2,9.2,9.5,9.1,8.6],"ir":0,"wk":[9.0,2.0,5.0,7.0,7.0,7.0,25.0,18.0]},"8172":{"n":"Greg Dulcich","pos":"TE","nfl":"MIA","st":"","age":26,"v":8.3,"g":7,"ppg":7.1,"l3":10.5,"sd":5.1,"E":[8.2,7.9,7.7,7.8,7.5,8.0,7.9,7.9,7.7],"ir":0,"wk":[3.8,3.7,10.5,0.0,9.7,null,13.6,8.3]},"13968":{"n":"Drew Stevens","pos":"K","nfl":"WAS","st":"","age":22,"v":8.8,"g":7,"ppg":8.3,"l3":9.7,"sd":3.7,"E":[7.9,7.8,7.8,7.8,7.8,7.8,7.9,7.8,7.8],"ir":0,"wk":[4.0,8.0,10.0,7.0,7.0,7.0,null,15.0]},"8210":{"n":"Chig Okonkwo","pos":"TE","nfl":"WAS","st":"","age":27,"v":7.5,"g":5,"ppg":6.6,"l3":9.0,"sd":5.3,"E":[7.8,7.5,7.7,8.0,7.8,7.6,7.4,7.2,7.6],"ir":0,"wk":[3.6,null,null,2.5,10.0,13.9,null,3.2]},"12498":{"n":"Mason Taylor","pos":"TE","nfl":"NYJ","st":"","age":22,"v":9.2,"g":6,"ppg":7.4,"l3":12.5,"sd":7.5,"E":[8.4,8.2,8.4,8.9,0.0,8.0,8.7,8.2,7.9],"ir":0,"wk":[1.8,0.0,null,null,5.4,7.3,25.2,4.9]},"NO":{"n":"New Orleans Saints","pos":"DEF","nfl":"NO","st":"","age":null,"v":7.6,"g":7,"ppg":6.0,"l3":10.7,"sd":10.3,"E":[7.9,6.9,6.6,6.6,6.6,6.6,6.8,7.1,7.0],"ir":0,"wk":[3.0,8.0,2.0,-3.0,15.0,13.0,4.0,null]},"GB":{"n":"Green Bay Packers","pos":"DEF","nfl":"GB","st":"","age":null,"v":8.3,"g":8,"ppg":7.6,"l3":9.7,"sd":10.1,"E":[7.3,7.6,0.0,7.6,7.6,7.6,8.3,7.1,7.6],"ir":0,"wk":[1.0,5.0,-2.0,8.0,20.0,9.0,8.0,12.0]},"12492":{"n":"Pat Bryant","pos":"WR","nfl":"DEN","st":"IR","age":23,"v":7.9,"g":4,"ppg":8.0,"l3":7.9,"sd":5.8,"E":[0.0,0.0,8.6,8.6,9.0,8.5,8.6,8.3,8.3],"ir":0,"wk":[8.2,1.6,14.4,7.7,null,null,null,null]},"11630":{"n":"Roman Wilson","pos":"WR","nfl":"PIT","st":"IR","age":25,"v":9.5,"g":5,"ppg":9.0,"l3":10.5,"sd":6.4,"E":[0.0,0.0,8.3,8.1,8.5,8.5,8.5,8.2,8.8],"ir":0,"wk":[5.6,7.8,15.0,16.4,0.0,null,null,null]},"3286":{"n":"Demarcus Robinson","pos":"WR","nfl":"SF","st":"IR","age":32,"v":8.7,"g":2,"ppg":9.7,"l3":9.7,"sd":5.8,"E":[0.0,7.9,7.0,7.1,7.4,7.0,7.5,7.1,7.2],"ir":0,"wk":[13.0,6.4,null,null,null,null,null,null]},"8154":{"n":"Brian Robinson Jr.","pos":"RB","nfl":"ATL","st":"Questionable","age":27,"v":9.3,"g":6,"ppg":8.8,"l3":10.1,"sd":7.7,"E":[7.7,7.0,0.0,6.9,7.5,7.1,7.1,7.0,7.3],"ir":0,"wk":[3.1,8.7,11.0,25.7,1.6,3.0,null,null]},"9754":{"n":"Quentin Johnston","pos":"WR","nfl":"LAC","st":"","age":25,"v":5.8,"g":6,"ppg":5.4,"l3":6.5,"sd":4.5,"E":[6.6,6.2,6.2,6.1,6.4,6.3,6.0,6.8,6.0],"ir":0,"wk":[3.7,2.4,7.0,5.0,null,6.7,null,7.7]},"4039":{"n":"Cooper Kupp","pos":"WR","nfl":"SEA","st":"","age":33,"v":6.7,"g":8,"ppg":6.5,"l3":7.2,"sd":5.0,"E":[7.0,7.1,0.0,6.8,7.3,7.0,6.8,6.7,6.8],"ir":0,"wk":[5.5,4.0,14.6,2.3,3.5,10.0,4.0,7.7]},"6039":{"n":"Ty Johnson","pos":"RB","nfl":"BUF","st":"","age":29,"v":6.8,"g":5,"ppg":6.7,"l3":7.1,"sd":5.0,"E":[5.9,6.1,6.3,6.0,6.1,6.2,6.3,6.0,6.3],"ir":0,"wk":[null,null,9.0,3.2,11.2,4.7,null,5.3]},"4177":{"n":"Mack Hollins","pos":"WR","nfl":"NE","st":"IR","age":33,"v":9.0,"g":4,"ppg":9.0,"l3":8.9,"sd":5.5,"E":[6.4,7.2,0.0,7.1,6.9,6.8,6.9,7.0,6.8],"ir":0,"wk":[9.1,3.8,14.7,8.3,null,null,null,null]},"9511":{"n":"Keaton Mitchell","pos":"RB","nfl":"LAC","st":"","age":24,"v":5.3,"g":7,"ppg":6.1,"l3":3.9,"sd":5.4,"E":[5.3,6.0,6.2,6.2,6.0,6.4,6.0,6.4,6.0],"ir":0,"wk":[0.9,4.9,13.7,11.3,5.9,0.4,null,5.3]},"9757":{"n":"Kendre Miller","pos":"RB","nfl":"NO","st":"","age":24,"v":7.0,"g":6,"ppg":6.4,"l3":7.9,"sd":4.7,"E":[8.8,5.8,5.8,5.8,5.6,5.7,5.4,5.6,5.5],"ir":0,"wk":[9.0,null,3.9,1.9,9.0,9.0,5.8,null]},"10219":{"n":"Chris Rodriguez Jr.","pos":"RB","nfl":"JAX","st":"Questionable","age":27,"v":6.4,"g":7,"ppg":6.2,"l3":6.8,"sd":5.2,"E":[5.9,5.9,6.1,5.9,6.1,5.7,5.7,6.0,5.9],"ir":0,"wk":[2.3,1.3,9.7,9.5,2.1,5.5,null,12.8]},"9508":{"n":"Tyjae Spears","pos":"RB","nfl":"TEN","st":"Out","age":25,"v":4.5,"g":6,"ppg":4.5,"l3":4.4,"sd":5.1,"E":[0.0,5.7,6.2,5.7,6.1,6.2,6.0,6.0,5.8],"ir":0,"wk":[4.4,9.0,0.5,1.6,9.8,1.8,null,null]}},"fa":["8161","1373","11565","7042","3451","TB","8172","13968","8210","12498","NO","GB","12492","11630","3286","8154","9754","4039","6039","4177","9511","9757","10219","9508"],"opp":{"ARI":{"9":"@SEA","10":"LAR","11":"@KC","12":"WAS","13":"PHI","14":"BYE","15":"NYJ","16":"@NO","17":"LV"},"ATL":{"9":"CIN","10":"KC","11":"BYE","12":"@MIN","13":"DET","14":"@CLE","15":"@WAS","16":"TB","17":"NO"},"BAL":{"9":"JAX","10":"LAC","11":"@CAR","12":"@HOU","13":"BYE","14":"TB","15":"@PIT","16":"CLE","17":"@CIN"},"BUF":{"9":"@MIN","10":"@NYJ","11":"MIA","12":"KC","13":"@NE","14":"@GB","15":"CHI","16":"@DEN","17":"@MIA"},"CAR":{"9":"DEN","10":"@NO","11":"BAL","12":"@TB","13":"@MIN","14":"NO","15":"CIN","16":"@PIT","17":"SEA"},"CHI":{"9":"TB","10":"BYE","11":"NO","12":"@DET","13":"JAX","14":"@MIA","15":"@BUF","16":"GB","17":"DET"},"CIN":{"9":"@ATL","10":"PIT","11":"@WAS","12":"NO","13":"@CLE","14":"KC","15":"@CAR","16":"@IND","17":"BAL"},"CLE":{"9":"@NO","10":"HOU","11":"BYE","12":"LV","13":"CIN","14":"ATL","15":"@NYG","16":"@BAL","17":"IND"},"DAL":{"9":"@IND","10":"SF","11":"TEN","12":"PHI","13":"@SEA","14":"BYE","15":"@LAR","16":"JAX","17":"NYG"},"DEN":{"9":"@CAR","10":"BYE","11":"LV","12":"@PIT","13":"MIA","14":"@NYJ","15":"@LV","16":"BUF","17":"@NE"},"DET":{"9":"@MIA","10":"NE","11":"TB","12":"CHI","13":"@ATL","14":"TEN","15":"@MIN","16":"NYG","17":"@CHI"},"GB":{"9":"@NE","10":"MIN","11":"BYE","12":"@LAR","13":"@NO","14":"BUF","15":"MIA","16":"@CHI","17":"HOU"},"HOU":{"9":"@LAC","10":"@CLE","11":"IND","12":"BAL","13":"@PIT","14":"@WAS","15":"JAX","16":"@PHI","17":"@GB"},"IND":{"9":"DAL","10":"MIA","11":"@HOU","12":"NYG","13":"BYE","14":"@PHI","15":"@TEN","16":"CIN","17":"@CLE"},"JAX":{"9":"@BAL","10":"@TEN","11":"@NYG","12":"TEN","13":"@CHI","14":"PIT","15":"@HOU","16":"@DAL","17":"WAS"},"KC":{"9":"NYJ","10":"@ATL","11":"ARI","12":"@BUF","13":"@LAR","14":"@CIN","15":"NE","16":"SF","17":"@LAC"},"LAC":{"9":"HOU","10":"@BAL","11":"NYJ","12":"NE","13":"@TB","14":"@LV","15":"SF","16":"@MIA","17":"KC"},"LAR":{"9":"@WAS","10":"@ARI","11":"BYE","12":"GB","13":"KC","14":"@SF","15":"DAL","16":"@SEA","17":"@TB"},"LV":{"9":"@SF","10":"SEA","11":"@DEN","12":"@CLE","13":"BYE","14":"LAC","15":"DEN","16":"TEN","17":"@ARI"},"MIA":{"9":"DET","10":"@IND","11":"@BUF","12":"NYJ","13":"@DEN","14":"CHI","15":"@GB","16":"LAC","17":"BUF"},"MIN":{"9":"BUF","10":"@GB","11":"@SF","12":"ATL","13":"CAR","14":"@NE","15":"DET","16":"WAS","17":"@NYJ"},"NE":{"9":"GB","10":"@DET","11":"BYE","12":"@LAC","13":"BUF","14":"MIN","15":"@KC","16":"@NYJ","17":"DEN"},"NO":{"9":"CLE","10":"CAR","11":"@CHI","12":"@CIN","13":"GB","14":"@CAR","15":"@TB","16":"ARI","17":"@ATL"},"NYG":{"9":"@PHI","10":"WAS","11":"JAX","12":"@IND","13":"SF","14":"@SEA","15":"CLE","16":"@DET","17":"@DAL"},"NYJ":{"9":"@KC","10":"BUF","11":"@LAC","12":"@MIA","13":"BYE","14":"DEN","15":"@ARI","16":"NE","17":"MIN"},"PHI":{"9":"NYG","10":"BYE","11":"PIT","12":"@DAL","13":"@ARI","14":"IND","15":"SEA","16":"HOU","17":"@SF"},"PIT":{"9":"BYE","10":"@CIN","11":"@PHI","12":"DEN","13":"HOU","14":"@JAX","15":"BAL","16":"CAR","17":"@TEN"},"SEA":{"9":"ARI","10":"@LV","11":"BYE","12":"@SF","13":"DAL","14":"NYG","15":"@PHI","16":"LAR","17":"@CAR"},"SF":{"9":"LV","10":"@DAL","11":"MIN","12":"SEA","13":"@NYG","14":"LAR","15":"@LAC","16":"@KC","17":"PHI"},"TB":{"9":"@CHI","10":"BYE","11":"@DET","12":"CAR","13":"LAC","14":"@BAL","15":"NO","16":"@ATL","17":"LAR"},"TEN":{"9":"BYE","10":"JAX","11":"@DAL","12":"@JAX","13":"WAS","14":"@DET","15":"IND","16":"@LV","17":"PIT"},"WAS":{"9":"LAR","10":"@NYG","11":"CIN","12":"@ARI","13":"@TEN","14":"HOU","15":"ATL","16":"@MIN","17":"@JAX"}},"def_rank":{"DET":{"QB":[1,25.5],"RB":[29,18.2],"WR":[3,37.7],"TE":[1,27.9],"K":[31,4.5],"DEF":[27,3.7]},"ARI":{"QB":[2,22.3],"RB":[19,20.7],"WR":[14,33.5],"TE":[11,16.1],"K":[17,8.6],"DEF":[21,6.0]},"WAS":{"QB":[3,20.6],"RB":[24,19.5],"WR":[13,33.6],"TE":[2,20.7],"K":[9,9.3],"DEF":[23,5.0]},"LV":{"QB":[4,20.6],"RB":[6,25.3],"WR":[12,33.8],"TE":[4,18.2],"K":[22,7.8],"DEF":[32,2.9]},"MIA":{"QB":[5,20.6],"RB":[8,25.0],"WR":[30,25.4],"TE":[3,19.2],"K":[21,7.9],"DEF":[8,8.7]},"DAL":{"QB":[6,20.5],"RB":[4,26.4],"WR":[7,35.6],"TE":[18,13.7],"K":[13,8.9],"DEF":[30,3.4]},"NYG":{"QB":[7,20.4],"RB":[22,19.8],"WR":[16,31.3],"TE":[20,12.6],"K":[25,7.2],"DEF":[7,8.9]},"CHI":{"QB":[8,19.7],"RB":[30,17.8],"WR":[17,30.5],"TE":[22,12.0],"K":[32,4.2],"DEF":[16,7.1]},"TEN":{"QB":[9,19.4],"RB":[16,21.6],"WR":[1,40.7],"TE":[21,12.6],"K":[4,10.0],"DEF":[13,7.4]},"PHI":{"QB":[10,19.3],"RB":[17,21.4],"WR":[2,39.4],"TE":[30,9.6],"K":[10,9.2],"DEF":[19,6.6]},"BUF":{"QB":[11,19.0],"RB":[3,26.5],"WR":[5,37.1],"TE":[10,16.4],"K":[28,6.4],"DEF":[26,3.9]},"BAL":{"QB":[12,18.6],"RB":[25,19.4],"WR":[8,35.0],"TE":[19,13.5],"K":[11,9.1],"DEF":[15,7.1]},"HOU":{"QB":[13,18.5],"RB":[13,22.3],"WR":[4,37.3],"TE":[29,10.1],"K":[8,9.3],"DEF":[25,4.0]},"CIN":{"QB":[14,18.4],"RB":[26,19.4],"WR":[15,32.9],"TE":[8,16.5],"K":[12,9.0],"DEF":[22,5.3]},"IND":{"QB":[15,18.3],"RB":[9,24.8],"WR":[27,27.4],"TE":[9,16.5],"K":[1,11.4],"DEF":[4,10.0]},"NYJ":{"QB":[16,18.1],"RB":[15,21.8],"WR":[24,28.5],"TE":[17,13.9],"K":[24,7.2],"DEF":[12,7.4]},"NO":{"QB":[17,17.8],"RB":[1,30.0],"WR":[19,29.8],"TE":[6,17.0],"K":[7,9.7],"DEF":[10,8.1]},"CAR":{"QB":[18,17.4],"RB":[2,28.3],"WR":[20,29.8],"TE":[16,14.0],"K":[18,8.3],"DEF":[9,8.1]},"DEN":{"QB":[19,17.3],"RB":[10,24.4],"WR":[26,27.9],"TE":[7,16.8],"K":[19,8.1],"DEF":[24,4.9]},"LAR":{"QB":[20,16.8],"RB":[21,19.9],"WR":[28,26.8],"TE":[26,10.6],"K":[5,9.9],"DEF":[20,6.1]},"ATL":{"QB":[21,15.9],"RB":[5,25.9],"WR":[10,34.4],"TE":[12,15.8],"K":[23,7.4],"DEF":[2,11.1]},"SF":{"QB":[22,15.7],"RB":[12,22.7],"WR":[22,29.1],"TE":[23,12.0],"K":[6,9.9],"DEF":[28,3.7]},"NE":{"QB":[23,15.7],"RB":[27,18.9],"WR":[11,33.8],"TE":[24,11.9],"K":[20,8.1],"DEF":[6,8.9]},"JAX":{"QB":[24,15.6],"RB":[32,16.8],"WR":[6,36.9],"TE":[25,11.0],"K":[30,6.0],"DEF":[31,3.3]},"LAC":{"QB":[25,14.3],"RB":[11,23.9],"WR":[18,30.3],"TE":[27,10.2],"K":[16,8.7],"DEF":[1,12.3]},"CLE":{"QB":[26,14.2],"RB":[18,21.1],"WR":[21,29.2],"TE":[13,14.9],"K":[14,8.8],"DEF":[3,10.2]},"KC":{"QB":[27,13.9],"RB":[23,19.8],"WR":[31,24.9],"TE":[5,17.8],"K":[15,8.7],"DEF":[29,3.4]},"GB":{"QB":[28,13.9],"RB":[7,25.0],"WR":[9,34.8],"TE":[31,9.0],"K":[29,6.1],"DEF":[18,6.6]},"TB":{"QB":[29,13.1],"RB":[31,16.9],"WR":[25,28.0],"TE":[14,14.8],"K":[3,10.9],"DEF":[11,8.1]},"PIT":{"QB":[30,12.9],"RB":[20,20.2],"WR":[23,28.7],"TE":[15,14.5],"K":[2,10.9],"DEF":[14,7.2]},"SEA":{"QB":[31,11.9],"RB":[14,22.2],"WR":[32,23.3],"TE":[28,10.2],"K":[26,7.0],"DEF":[5,9.2]},"MIN":{"QB":[32,8.9],"RB":[28,18.4],"WR":[29,25.9],"TE":[32,7.1],"K":[27,6.8],"DEF":[17,6.7]}}};
+// FF League HQ trade simulator. Data: window.TRADE (trade_data.py). Everything runs in the browser.
+(() => {
+  const T = window.TRADE; if (!T || !window.SL) return;
+  const { C, el, av, pchip, posColor, tip, svgIn } = SL;
+  const M = T.meta, PL = T.players, WK = M.weeks, NW = WK.length;
+  const REG = WK.map((w, i) => (w < M.po ? i : -1)).filter((i) => i >= 0);
+  const POI = WK.map((w, i) => (w >= M.po ? i : -1)).filter((i) => i >= 0);
+  const ALLI = WK.map((_, i) => i);
+  const TEAMS = T.teams, N = TEAMS.length, IX = Object.fromEntries(TEAMS.map((t, i) => [t.manager, i]));
+  const OUT = /^(Out|IR|PUP|Sus|Suspended|NA|DNR|Doubtful)$/;
+  const OK = { QB: ['QB'], RB: ['RB'], WR: ['WR'], TE: ['TE'], K: ['K'], DEF: ['DEF'], FLEX: ['RB', 'WR', 'TE'], SUPER_FLEX: ['QB', 'RB', 'WR', 'TE'], REC_FLEX: ['WR', 'TE'], WRRB_FLEX: ['WR', 'RB'] };
+  const SLOTS = [...M.slots].sort((a, b) => OK[a].length - OK[b].length);
+  const ACTIVE_MAX = M.slots.length + M.bench;
+  const POSG = ['QB', 'RB', 'WR', 'TE', 'K', 'DEF'];
+  const f1 = (v) => (Math.round(v * 10) / 10).toFixed(1);
+  const sg = (v, d = 1) => { const r = +(+v).toFixed(d); return (r > 0 ? '+' : r < 0 ? '−' : '±') + Math.abs(r).toFixed(d); };
+  const pct = (v) => (v >= 0.9995 ? '>99.9%' : v > 0 && v < 0.001 ? '<0.1%' : v <= 0 ? '0%' : (v * 100).toFixed(v >= 0.1 ? 0 : 1) + '%');
+  const pp = (d) => sg(d * 100, 1) + '%';
+  const mean = (a) => (a.length ? a.reduce((s, x) => s + x, 0) / a.length : 0);
+  const sum = (a) => a.reduce((s, x) => s + x, 0);
+  const avgE = (pid, idx) => mean(idx.map((i) => PL[pid].E[i]));
+
+  // ---------- lineups ----------
+  // greedy, most restrictive slot first: optimal for this league's nested FLEX slots
+  const lineup = (pids, val) => {
+    const pool = pids.map((p) => ({ p, pos: PL[p].pos, v: val(p) })).filter((x) => x.v > 0).sort((a, b) => b.v - a.v);
+    const used = new Set(); let tot = 0; const picks = [];
+    for (const s of SLOTS) {
+      const x = pool.find((y) => !used.has(y.p) && OK[s].includes(y.pos));
+      if (x) { used.add(x.p); tot += x.v; picks.push([s, x.p, x.v]); } else picks.push([s, null, 0]);
+    }
+    return { tot, picks, used };
+  };
+  const hqVal = (p) => (OUT.test(PL[p].st) ? 0 : PL[p].v);
+  const weekly = (pids) => WK.map((_, i) => lineup(pids, (p) => PL[p].E[i]));
+
+  // ---------- roster after the trade: roster limits, drops, open spots ----------
+  const rosterOf = (t) => ({ act: [...t.players], ir: [...t.ir] });
+  const applyTrade = (t, out, inn, faTaken) => {
+    const r = rosterOf(t); const notes = { drops: [], adds: [], toIR: [] };
+    r.act = r.act.filter((p) => !out.includes(p)); r.ir = r.ir.filter((p) => !out.includes(p));
+    for (const p of inn) {
+      if (PL[p].ir && r.ir.length < M.ir_slots) { r.ir.push(p); notes.toIR.push(p); } else r.act.push(p);
+    }
+    const ros = (p) => sum(PL[p].E);
+    while (r.act.length > ACTIVE_MAX) {          // too many players: drop the least useful one we didn't just get
+      const cnt = (pos) => r.act.filter((x) => PL[x].pos === pos).length;
+      const cand = r.act.filter((p) => !inn.includes(p) && !(['QB', 'K', 'DEF', 'TE'].includes(PL[p].pos) && cnt(PL[p].pos) === 1))
+        .sort((a, b) => ros(a) - ros(b));
+      const d = cand[0] || r.act.filter((p) => !inn.includes(p)).sort((a, b) => ros(a) - ros(b))[0];
+      r.act = r.act.filter((p) => p !== d); notes.drops.push(d);
+    }
+    while (r.act.length < ACTIVE_MAX) {          // open spot: add the free agent that helps the lineup most
+      const base = sum(weekly([...r.act, ...r.ir]).map((l) => l.tot));
+      let best = null;
+      for (const f of T.fa) {
+        if (faTaken.has(f)) continue;
+        const g = sum(weekly([...r.act, ...r.ir, f]).map((l) => l.tot)) - base;
+        if (!best || g > best.g + 1e-9 || (Math.abs(g - best.g) < 1e-9 && sum(PL[f].E) > sum(PL[best.f].E))) best = { f, g };
+      }
+      if (!best) break;
+      faTaken.add(best.f); r.act.push(best.f); notes.adds.push(best.f);
+    }
+    return { pids: [...r.act, ...r.ir], act: r.act, ir: r.ir, notes };
+  };
+
+  // ---------- one team's numbers for a roster ----------
+  const profile = (pids) => {
+    const hq = lineup(pids, hqVal);
+    const L = weekly(pids); const LW = L.map((l) => l.tot);
+    const bench = pids.filter((p) => !hq.used.has(p)).map((p) => avgE(p, ALLI)).sort((a, b) => b - a).slice(0, 4);
+    const grp = Object.fromEntries(POSG.map((g) => [g, 0]));
+    L.forEach((l) => l.picks.forEach(([, p, v]) => { if (p) grp[PL[p].pos] += v / NW; }));
+    const top2 = L.map((l) => { const v = l.picks.map((x) => x[2]).sort((a, b) => b - a); return (v[0] + v[1]) / (l.tot || 1); });
+    const has = Object.fromEntries(POSG.map((g) => [g, pids.filter((p) => PL[p].pos === g && sum(PL[p].E) > 0).length]));
+    return { hq: hq.tot, hqPicks: hq.picks, L, LW, ros: mean(REG.map((i) => LW[i])), po: mean(POI.map((i) => LW[i])), all: mean(LW), bench: sum(bench), grp, top2: mean(top2), has };
+  };
+
+  // ---------- playoff odds: League HQ's model, week by week ----------
+  let seed = 1;
+  const rnd = () => { seed |= 0; seed = (seed + 0x6D2B79F5) | 0; let t = Math.imul(seed ^ (seed >>> 15), 1 | seed); t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t; return ((t ^ (t >>> 14)) >>> 0) / 4294967296; };
+  let spare = null;
+  const nrm = () => { if (spare !== null) { const s = spare; spare = null; return s; } let u = 0; while (u === 0) u = rnd(); const v = rnd(); const r = Math.sqrt(-2 * Math.log(u)); spare = r * Math.sin(2 * Math.PI * v); return r * Math.cos(2 * Math.PI * v); };
+  const GAMES = (() => { const g = {}; for (const [w, a, b] of T.left) (g[w] = g[w] || []).push([IX[TEAMS.find((t) => t.rid === a).manager], IX[TEAMS.find((t) => t.rid === b).manager]]); return g; })();
+  const BASE = TEAMS.map((t) => profile([...t.players, ...t.ir]));
+  const LWBAR = BASE.map((b) => mean(b.LW));
+  const adjOf = (ti, LW) => LW.map((v) => M.scale * (v - LWBAR[ti]));
+  const odds = (scen, nsim = 20000) => {           // scen: array of per-team weekly strength adjustments, one per scenario
+    seed = 2026; spare = null;
+    const S = scen.length, tau = M.SD / Math.sqrt(M.last + M.C);
+    const out = scen.map(() => ({ po: new Float64Array(N), title: new Float64Array(N), final: new Float64Array(N), seed: new Float64Array(N) }));
+    const W = scen.map(() => new Float64Array(N)), PF = scen.map(() => new Float64Array(N)), tru = new Float64Array(N), z = new Float64Array(N);
+    const regW = WK.filter((w) => w < M.po);
+    for (let s = 0; s < nsim; s++) {
+      for (let t = 0; t < N; t++) { tru[t] = TEAMS[t].mu + tau * nrm(); for (let k = 0; k < S; k++) { W[k][t] = TEAMS[t].w + 0.5 * TEAMS[t].t; PF[k][t] = TEAMS[t].pf; } }
+      for (const w of regW) {
+        const wi = WK.indexOf(w);
+        for (let t = 0; t < N; t++) z[t] = nrm();
+        for (let k = 0; k < S; k++) {
+          const adj = scen[k];
+          for (const [i, j] of GAMES[w] || []) {
+            const si = tru[i] + adj[i][wi] + M.SD * z[i], sj = tru[j] + adj[j][wi] + M.SD * z[j];
+            PF[k][i] += si; PF[k][j] += sj; if (si > sj) W[k][i] += 1; else W[k][j] += 1;
+          }
+        }
+      }
+      const zp = POI.map(() => Array.from({ length: N }, () => nrm()));
+      for (let k = 0; k < S; k++) {
+        const adj = scen[k], o = out[k];
+        const order = [...Array(N).keys()].sort((a, b) => (W[k][b] * 1e5 + PF[k][b]) - (W[k][a] * 1e5 + PF[k][a]));
+        order.forEach((t, r) => { o.seed[t] += r + 1; if (r < M.nplay) o.po[t] += 1; });
+        const sc = (t, r) => tru[t] + adj[t][POI[r]] + M.SD * zp[r][t];
+        const g = (a, b, r) => (sc(a, r) > sc(b, r) ? a : b);
+        const r1 = [g(order[0], order[7], 0), g(order[3], order[4], 0), g(order[2], order[5], 0), g(order[1], order[6], 0)];
+        const f1_ = g(r1[0], r1[1], 1), f2_ = g(r1[2], r1[3], 1);
+        o.final[f1_] += 1; o.final[f2_] += 1; o.title[g(f1_, f2_, 2)] += 1;
+      }
+    }
+    for (const o of out) for (const k of ['po', 'title', 'final', 'seed']) for (let t = 0; t < N; t++) o[k][t] /= nsim;
+    return out;
+  };
+
+  // ---------- risk: injuries and weekly swings, same random draws before and after ----------
+  const risk = (rosters, nsim = 1500) => {   // rosters: [[beforePids, afterPids], ...] -> per roster: array of (after - before) totals
+    seed = 77; spare = null;
+    const ids = [...new Set(rosters.flat(2))];
+    const res = rosters.map(() => ({ all: [], reg: [], po: [] }));
+    const av = {}, pts = {};
+    for (let s = 0; s < nsim; s++) {
+      for (const p of ids) {
+        const x = PL[p], h = (M.haz[x.pos] || [0.05, 0.3])[0], rb = (M.haz[x.pos] || [0.05, 0.3])[1];
+        let hurt = false; const a = new Array(NW), q = new Array(NW);
+        for (let i = 0; i < NW; i++) {
+          if (i > 0) { if (!hurt && x.E[i] > 0 && rnd() < h) hurt = true; else if (hurt && rnd() < rb) hurt = false; }
+          const plays = x.E[i] > 0 && !hurt; a[i] = plays ? x.E[i] : 0; q[i] = plays ? Math.max(0, x.E[i] + x.sd * nrm()) : 0;
+        }
+        av[p] = a; pts[p] = q;
+      }
+      rosters.forEach(([bef, aft], k) => {
+        const tot = (pids) => WK.map((_, i) => { const l = lineup(pids, (p) => av[p][i]); let v = 0; for (const [, p] of l.picks) if (p) v += pts[p][i]; return v; });
+        const b = tot(bef), a = tot(aft);
+        res[k].all.push(sum(a) - sum(b)); res[k].reg.push(sum(REG.map((i) => a[i] - b[i]))); res[k].po.push(sum(POI.map((i) => a[i] - b[i])));
+      });
+    }
+    return res.map((r) => {
+      const q = (arr, f) => { const s = [...arr].sort((x, y) => x - y); return s[Math.min(s.length - 1, Math.floor(f * s.length))]; };
+      return { p10: q(r.all, 0.1), p25: q(r.all, 0.25), p50: q(r.all, 0.5), p75: q(r.all, 0.75), p90: q(r.all, 0.9), better: r.all.filter((x) => x > 0).length / r.all.length, mean: mean(r.all), po50: q(r.po, 0.5) };
+    });
+  };
+
+  // ---------- trade value: points over the best free agent at the position ----------
+  const REPL = (() => {
+    const r = {};
+    for (const g of POSG) {
+      const fa = T.fa.filter((p) => PL[p].pos === g).map((p) => PL[p].E);
+      r[g] = WK.map((_, i) => Math.max(0, ...fa.map((e) => e[i])));
+    }
+    return r;
+  })();
+  const tvalue = (p) => sum(PL[p].E.map((e, i) => (e > 0 ? Math.max(0, e - REPL[PL[p].pos][i]) : 0)));
+
+  // ---------- helpers for words ----------
+  const nm = (p) => PL[p].n;
+  const list = (ps) => (ps.length <= 1 ? ps.map(nm).join('') : ps.slice(0, -1).map(nm).join(', ') + ' and ' + nm(ps[ps.length - 1]));
+  const isBye = (p, i) => (T.opp[PL[p].nfl] || {})[WK[i]] === 'BYE';
+  const backWeek = (p) => {   // first week he's projected to play again, when he is out now (byes don't count)
+    const E = PL[p].E; let missed = false;
+    for (let i = 0; i < NW; i++) { if (E[i] > 0) return missed ? WK[i] : null; if (!isBye(p, i)) missed = true; }
+    return 'never';
+  };
+  const outWeeks = (p) => WK.filter((w, i) => PL[p].E[i] === 0 && (T.opp[PL[p].nfl] || {})[w] !== 'BYE');
+  const byeOf = (p) => WK.find((w) => (T.opp[PL[p].nfl] || {})[w] === 'BYE');
+  const poSched = (p) => {
+    const x = PL[p]; const o = T.opp[x.nfl] || {};
+    return WK.filter((w) => w >= M.po).map((w) => { const op = o[w] || ''; const tm = op.replace('@', ''); const rk = (T.def_rank[tm] || {})[x.pos]; return { w, op, rk: rk ? rk[0] : null }; });
+  };
+  const poEase = (p) => { const s = poSched(p).filter((x) => x.rk); return s.length ? mean(s.map((x) => x.rk)) : null; };
+
+  // ---------- the analysis ----------
+  const analyze = (A, B, give) => {
+    const ta = TEAMS[IX[A]], tb = TEAMS[IX[B]];
+    const aOut = [...ta.players, ...ta.ir].filter((p) => give.has(p)), bOut = [...tb.players, ...tb.ir].filter((p) => give.has(p));
+    const taken = new Set();
+    const ra = applyTrade(ta, aOut, bOut, taken), rb = applyTrade(tb, bOut, aOut, taken);
+    const side = (t, mine, theirs, r) => {
+      const ti = IX[t.manager]; const before = BASE[ti], after = profile(r.pids);
+      return { t, ti, out: mine, inn: theirs, r, before, after };
+    };
+    const SA = side(ta, aOut, bOut, ra), SB = side(tb, bOut, aOut, rb);
+    const adjB = TEAMS.map((_, i) => adjOf(i, BASE[i].LW));
+    const adjA = adjB.map((a, i) => (i === SA.ti ? adjOf(i, SA.after.LW) : i === SB.ti ? adjOf(i, SB.after.LW) : a));
+    const [ob, oa] = odds([adjB, adjA]);
+    const rk = risk([[[...ta.players, ...ta.ir], ra.pids], [[...tb.players, ...tb.ir], rb.pids]]);
+    for (const [S, k] of [[SA, 0], [SB, 1]]) {
+      S.odds = { po: [ob.po[S.ti], oa.po[S.ti]], title: [ob.title[S.ti], oa.title[S.ti]], final: [ob.final[S.ti], oa.final[S.ti]], seed: [ob.seed[S.ti], oa.seed[S.ti]] };
+      S.risk = rk[k];
+      S.tvOut = sum(S.out.map(tvalue)); S.tvIn = sum(S.inn.map(tvalue));
+      const dT = S.odds.title[1] - S.odds.title[0], dP = S.odds.po[1] - S.odds.po[0], dPts = S.after.all - S.before.all;
+      S.score = 100 * dT + 0.3 * 100 * dP + 0.1 * dPts;
+    }
+    const ripple = TEAMS.map((t, i) => ({ t, d: oa.po[i] - ob.po[i], dt: oa.title[i] - ob.title[i] })).filter((x) => x.t !== ta && x.t !== tb).sort((a, b) => a.d - b.d);
+    // league rank of each position group, before and after (other teams unchanged)
+    const grpRank = (S, which) => Object.fromEntries(POSG.map((g) => {
+      const vals = TEAMS.map((_, i) => (i === SA.ti ? (which === 'a' ? SA.after : SA.before) : i === SB.ti ? (which === 'a' ? SB.after : SB.before) : BASE[i]).grp[g]);
+      const me = vals[S.ti]; return [g, 1 + vals.filter((v) => v > me + 1e-9).length];
+    }));
+    for (const S of [SA, SB]) { S.rankB = grpRank(S, 'b'); S.rankA = grpRank(S, 'a'); }
+    for (const S of [SA, SB]) S.pc = prosCons(S);
+    return { SA, SB, ripple };
+  };
+
+  const grade = (s) => (s >= 6 ? ['A+', 'Big win'] : s >= 3.5 ? ['A', 'Clear win'] : s >= 2 ? ['A−', 'Win'] : s >= 1 ? ['B+', 'Small win'] : s >= 0.4 ? ['B', 'Slight edge']
+    : s > -0.4 ? ['C', 'A wash'] : s > -1 ? ['C−', 'Slight step back'] : s > -2 ? ['D+', 'Small loss'] : s > -3.5 ? ['D', 'Loss'] : ['F', 'Big loss']);
+
+  function prosCons(S) {
+    const pro = [], con = [], risk_ = [], ctx = [];
+    const b = S.before, a = S.after;
+    const dR = a.ros - b.ros, dP = a.po - b.po, dHQ = a.hq - b.hq;
+    const [po0, po1] = S.odds.po, [t0, t1] = S.odds.title;
+    // standing context first: it decides what matters
+    if (po0 >= 0.9) ctx.push(`Already ${pct(po0)} to make the playoffs, so the playoff weeks (${M.po}–${M.po + 2}) matter more than the next few games.`);
+    else if (po0 <= 0.15) ctx.push(`Only ${pct(po0)} to make the playoffs: this team needs points now, in weeks ${WK[0]}–${M.po - 1}, or the playoff weeks won't matter.`);
+    else ctx.push(`On the bubble at ${pct(po0)} to make the playoffs: every regular-season point counts.`);
+    if (M.deadline && WK[0] > M.deadline) ctx.push(`The trade deadline (week ${M.deadline}) has passed.`);
+    // results
+    const dPo = po1 - po0, dT = t1 - t0;
+    if (dPo >= 0.02) pro.push(`Playoff odds up ${pp(dPo).slice(1)} (${pct(po0)} → ${pct(po1)}).`); else if (dPo <= -0.02) con.push(`Playoff odds down ${pp(-dPo).slice(1)} (${pct(po0)} → ${pct(po1)}).`);
+    if (dT >= 0.005) pro.push(`Title odds up ${pp(dT).slice(1)} (${pct(t0)} → ${pct(t1)}).`); else if (dT <= -0.005) con.push(`Title odds down ${pp(-dT).slice(1)} (${pct(t0)} → ${pct(t1)}).`);
+    if (dR >= 0.8) pro.push(`Starting lineup scores ${sg(dR)} a week for the rest of the regular season.`); else if (dR <= -0.8) con.push(`Starting lineup scores ${sg(dR)} a week for the rest of the regular season.`);
+    if (dP >= 0.8) pro.push(`${sg(dP)} a week in the playoff weeks.`); else if (dP <= -0.8) con.push(`${sg(dP)} a week in the playoff weeks.`);
+    if (Math.abs(dHQ) >= 1 && Math.sign(dHQ) !== Math.sign(dR + dP || dHQ)) ctx.push(`On today's form (League HQ value) the lineup goes ${sg(dHQ)}, but schedule and projections point the other way.`);
+    // positions
+    for (const g of POSG) {
+      const d = a.grp[g] - b.grp[g]; if (Math.abs(d) < 1.5) continue;
+      const rk = ` (league rank ${S.rankB[g]} → ${S.rankA[g]})`;
+      (d > 0 ? pro : con).push(`${g} starters ${sg(d)} a week${rk}.`);
+    }
+    // depth and roster spots
+    const dB = a.bench - b.bench;
+    if (dB <= -4) con.push(`Thinner bench: the top 4 backups lose ${f1(-dB)} expected points a week of cover for byes and injuries.`);
+    else if (dB >= 4) pro.push(`Deeper bench: ${sg(dB)} expected points a week in the top 4 backups.`);
+    if (S.r.notes.drops.length) con.push(`Roster is over the limit: you'd drop ${list(S.r.notes.drops)}.`);
+    if (S.r.notes.adds.length) pro.push(`Opens ${S.r.notes.adds.length} roster spot${S.r.notes.adds.length > 1 ? 's' : ''}: the best free agent${S.r.notes.adds.length > 1 ? 's' : ''} to add: ${list(S.r.notes.adds)}.`);
+    if (S.r.notes.toIR.length) ctx.push(`${list(S.r.notes.toIR)} can go straight to an IR slot.`);
+    for (const g of ['QB', 'TE', 'K', 'DEF']) if (b.has[g] > 0 && a.has[g] === 0) con.push(`No ${g} left on the roster: you'd need a pickup.`);
+    if (S.out.length > S.inn.length && S.inn.length) ctx.push(`${S.out.length}-for-${S.inn.length}: consolidates into fewer, better players.`);
+    if (S.inn.length > S.out.length && S.out.length) ctx.push(`${S.out.length}-for-${S.inn.length}: spreads value across more players, more depth.`);
+    // bye weeks: worst week change
+    const dW = WK.map((w, i) => ({ w, d: a.LW[i] - b.LW[i] }));
+    const worst = dW.reduce((m, x) => (x.d < m.d ? x : m), dW[0]);
+    if (worst && worst.d <= -6 && dR > -0.8) con.push(`Week ${worst.w} takes a hit (${sg(worst.d)}): byes or injuries stack up that week.`);
+    // the players coming in
+    for (const p of S.inn) {
+      const x = PL[p]; const bw = backWeek(p);
+      if (bw === 'never') con.push(`${x.n} isn't projected to play again this season.`);
+      else if (bw) risk_.push(`${x.n} is ${x.st || 'out'} and projected back in week ${bw}.`);
+      else if (x.st && x.st !== 'Active') risk_.push(`${x.n} is listed ${x.st}.`);
+      if (x.g > 0 && x.g <= 3) risk_.push(`${x.n} has only ${x.g} game${x.g > 1 ? 's' : ''} this season: a small sample.`);
+      if (x.g >= 4 && x.l3 >= x.ppg * 1.3 && x.l3 - x.ppg >= 3) risk_.push(`Buying high on ${x.n}: ${f1(x.l3)} a game over the last 3 vs ${f1(x.ppg)} for the season.`);
+      if (x.g >= 4 && x.l3 <= x.ppg * 0.7 && x.ppg - x.l3 >= 3) pro.push(`Buying low on ${x.n}: ${f1(x.l3)} a game over the last 3 vs ${f1(x.ppg)} for the season.`);
+      const e = avgE(p, ALLI); if (e >= 6 && x.sd / Math.max(e, 1) >= 0.65) risk_.push(`${x.n} is boom-or-bust: about ±${f1(x.sd)} points from week to week.`);
+      const ease = poEase(p); if (ease && avgE(p, POI) >= 8) {
+        if (ease <= 10) pro.push(`${x.n} has a soft playoff schedule (${poSched(p).map((s) => s.op).join(', ')}).`);
+        else if (ease >= 23) con.push(`${x.n} has a tough playoff schedule (${poSched(p).map((s) => s.op).join(', ')}).`);
+      }
+    }
+    for (const p of S.out) {
+      const x = PL[p]; const bw = backWeek(p);
+      if (bw === 'never') pro.push(`Moves ${x.n}, who isn't projected to play again this season.`);
+      else if (bw && bw >= M.po - 2) pro.push(`Sells ${x.n} while he's out (back week ${bw}).`);
+      if (x.g >= 4 && x.l3 >= x.ppg * 1.3 && x.l3 - x.ppg >= 3) pro.push(`Selling high on ${x.n}: ${f1(x.l3)} a game over the last 3 vs ${f1(x.ppg)} for the season.`);
+      if (x.g >= 4 && x.l3 <= x.ppg * 0.7 && x.ppg - x.l3 >= 3) risk_.push(`Selling low on ${x.n}: ${f1(x.l3)} a game over the last 3 vs ${f1(x.ppg)} for the season.`);
+    }
+    if (a.top2 - b.top2 >= 0.04) risk_.push(`More eggs in one basket: the top 2 starters go from ${pct(b.top2)} to ${pct(a.top2)} of the lineup's points, so one injury hurts more.`);
+    // risk summary
+    const R = S.risk;
+    risk_.unshift(`With injuries and weekly swings played out ${'1,500'} times, the trade comes out ahead in ${pct(R.better)} of seasons (weeks ${WK[0]}–${WK[NW - 1]}).`);
+    return { pro, con, risk: risk_, ctx };
+  }
+
+  // ---------- UI ----------
+  const state = { a: null, b: null, give: new Set() };
+  try { const s = JSON.parse(sessionStorage.getItem('ffhq-trade') || 'null'); if (s) { state.a = s.a; state.b = s.b; state.give = new Set(s.give || []); } } catch (e) {}
+  const save = () => { try { sessionStorage.setItem('ffhq-trade', JSON.stringify({ a: state.a, b: state.b, give: [...state.give] })); } catch (e) {} };
+  const sortedTeams = () => [...TEAMS].sort((x, y) => x.manager.toLowerCase().localeCompare(y.manager.toLowerCase()));
+  const POSORD = { QB: 0, RB: 1, WR: 2, TE: 3, K: 4, DEF: 5 };
+  let host = null, lastKey = '', timer = null;
+
+  const teamPicker = (key, other) => {
+    const card = el('div', 'card tside');
+    const head = el('div', 'thead');
+    const sel = el('select'); sel.setAttribute('aria-label', key === 'a' ? 'Team A' : 'Team B');
+    sel.append(...sortedTeams().map((t) => new Option(`${t.manager} · ${t.team}`, t.manager)));
+    sel.value = state[key];
+    sel.onchange = () => {
+      const t = TEAMS[IX[state[key]]]; for (const p of [...t.players, ...t.ir]) state.give.delete(p);
+      state[key] = sel.value; if (state[key] === state[other]) { state[other] = sortedTeams().find((t) => t.manager !== sel.value).manager; state.give.clear(); }
+      save(); render();
+    };
+    const t = TEAMS[IX[state[key]]];
+    const meta = el('div', 'grow');
+    meta.append(sel, el('div', 'muted small', `${t.w}-${t.l}${t.t ? '-' + t.t : ''} · ${f1(t.pf)} pts · lineup value ${f1(BASE[IX[t.manager]].hq)}`));
+    head.append(av(t.manager, 36), meta); card.append(head);
+    card.append(el('div', 'muted small tcap', `Tap the players ${key === 'a' ? 'Team A' : 'Team B'} sends. Value = League HQ value · Rest = expected points a week, weeks ${WK[0]}–${M.po - 1} · Playoff = expected points a week, weeks ${M.po}–${M.po + 2}`));
+    const lst = el('div', 'list tlist');
+    const ps = [...t.players, ...t.ir].sort((x, y) => (POSORD[PL[x].pos] ?? 9) - (POSORD[PL[y].pos] ?? 9) || avgE(y, ALLI) - avgE(x, ALLI));
+    for (const p of ps) {
+      const x = PL[p]; const on = state.give.has(p);
+      const row = el('div', 'li trow' + (on ? ' on' : ''));
+      const tx = el('div', 'grow');
+      const st = x.st ? ` · ${x.st}` : ''; const ir = t.ir.includes(p) ? ' · on IR slot' : '';
+      tx.append(el('div', 'nm', x.n), el('div', 'tm', `${x.pos} · ${x.nfl}${st}${ir}`));
+      const nums = el('div', 'num tnums');
+      nums.append(el('span', null, f1(x.v)), el('span', null, f1(avgE(p, REG))), el('span', null, f1(avgE(p, POI))));
+      const btn = el('button', 'tbtn', on ? '✓ In' : 'Add'); btn.setAttribute('aria-pressed', String(on)); btn.setAttribute('aria-label', `${on ? 'Remove' : 'Add'} ${x.n}`);
+      btn.onclick = () => { if (state.give.has(p)) state.give.delete(p); else state.give.add(p); save(); render(); };
+      row.append(pchip(x.n, x.pos, 34), tx, nums, btn); lst.append(row);
+    }
+    const hdr = el('div', 'li thdr'); const hn = el('div', 'num tnums'); hn.append(el('span', null, 'Value'), el('span', null, 'Rest'), el('span', null, 'Playoff'));
+    hdr.append(el('div', 'grow'), hn, el('div', 'tbtnsp'));
+    card.append(hdr, lst);
+    return card;
+  };
+
+  const deltaCell = (b, a, fmt = f1, good = 1, thr = 0.05) => {
+    const d = a - b; const c = el('td', 'n');
+    c.append(el('span', 'muted', fmt(b) + ' → '), el('b', null, fmt(a)));
+    const s = el('span', 'dl ' + (d * good > thr ? 'pos' : d * good < -thr ? 'neg' : 'muted'), ' ' + (fmt === pct ? pp(d) : sg(d))); c.append(s); return c;
+  };
+
+  const verdictCard = (S, other) => {
+    const [g, word] = grade(S.score);
+    const card = el('div', 'card tverdict');
+    const h = el('div', 'thead'); const tx = el('div', 'grow');
+    tx.append(el('div', 'nm', S.t.manager), el('div', 'muted small', S.t.team));
+    const gb = el('div', 'tgrade g' + g[0]); gb.append(el('div', 'gl', g), el('div', 'gw', word));
+    h.append(av(S.t.manager, 40), tx, gb); card.append(h);
+    const kp = el('div', 'tkpis');
+    const kpi = (lab, b, a, fmt, d) => { const k = el('div', 'kpi'); k.append(el('div', 'k', lab), el('div', 'v', fmt(a)), el('div', 'dl ' + (d > 0.0005 ? 'pos' : d < -0.0005 ? 'neg' : 'muted'), (fmt === pct ? pp(d) : sg(d)) + ` (was ${fmt(b)})`)); kp.append(k); };
+    kpi('Title odds', S.odds.title[0], S.odds.title[1], pct, S.odds.title[1] - S.odds.title[0]);
+    kpi('Playoff odds', S.odds.po[0], S.odds.po[1], pct, S.odds.po[1] - S.odds.po[0]);
+    kpi(`Pts/wk, wk ${WK[0]}–${M.po - 1}`, S.before.ros, S.after.ros, f1, S.after.ros - S.before.ros);
+    kpi(`Pts/wk, playoffs`, S.before.po, S.after.po, f1, S.after.po - S.before.po);
+    card.append(kp);
+    const sec = (title, items, cls) => { if (!items.length) return; const d = el('div', 'tpc ' + cls); d.append(el('h3', null, title)); const ul = el('ul'); for (const t of items) ul.append(el('li', null, t)); d.append(ul); card.append(d); };
+    sec('Context', S.pc.ctx, 'ctx'); sec('Pros', S.pc.pro, 'pro'); sec('Cons', S.pc.con, 'con'); sec('Risk', S.pc.risk, 'rsk');
+    return card;
+  };
+
+  const weekChart = (R) => {
+    const node = el('div', 'chart'); node.style.minHeight = '0';
+    const W = innerWidth < 640 ? 400 : 640, H = 230, L = 34, Rr = 8, Tp = 22, Bm = 26;
+    const svg = svgIn(node, W, H).attr('height', null); const tp = tip(node);
+    const data = WK.map((w, i) => ({ w, a: R.SA.after.LW[i] - R.SA.before.LW[i], b: R.SB.after.LW[i] - R.SB.before.LW[i] }));
+    const mx = Math.max(4, d3.max(data, (d) => Math.max(Math.abs(d.a), Math.abs(d.b)))) * 1.1;
+    const x = d3.scaleBand(WK, [L, W - Rr]).padding(0.25), y = d3.scaleLinear([-mx, mx], [H - Bm, Tp]).nice();
+    const x0 = x(M.po); svg.append('rect').attr('x', x0 - x.step() * x.padding() / 2).attr('y', Tp - 16).attr('width', W - Rr - x0 + x.step() * x.padding() / 2).attr('height', H - Bm - Tp + 16).attr('fill', C.gold).attr('opacity', 0.07);
+    svg.append('text').attr('x', W - Rr - 4).attr('y', Tp - 4).attr('text-anchor', 'end').style('font-size', '11px').attr('fill', C.gold).text('Playoffs 🏆');
+    for (const tk of y.ticks(5)) {
+      svg.append('line').attr('x1', L).attr('x2', W - Rr).attr('y1', y(tk)).attr('y2', y(tk)).attr('stroke', tk === 0 ? C.muted : C.line).attr('stroke-dasharray', tk === 0 ? null : '2 4');
+      svg.append('text').attr('x', L - 6).attr('y', y(tk)).attr('dy', '0.35em').attr('text-anchor', 'end').style('font-size', '10px').attr('fill', C.muted).text(tk > 0 ? '+' + tk : tk);
+    }
+    const ca = SL.avColor(R.SA.t.manager), cb = SL.avColor(R.SB.t.manager); const bw = x.bandwidth() / 2;
+    for (const d of data) {
+      for (const [k, col, off, S] of [['a', ca, 0, R.SA], ['b', cb, bw, R.SB]]) {
+        const v = d[k]; svg.append('rect').attr('x', x(d.w) + off).attr('width', bw - 1).attr('y', Math.min(y(0), y(v))).attr('height', Math.max(1, Math.abs(y(v) - y(0)))).attr('rx', 2).attr('fill', col)
+          .on('pointermove', (ev) => { const i = WK.indexOf(d.w); tp.show(ev, `Week ${d.w} · ${S.t.manager}`, [`${f1(S.before.LW[i])} → ${f1(S.after.LW[i])} expected (${sg(v)})`]); }).on('pointerleave', () => tp.hide());
+      }
+      svg.append('text').attr('x', x(d.w) + x.bandwidth() / 2).attr('y', H - 8).attr('text-anchor', 'middle').style('font-size', '10.5px').attr('fill', C.muted).text(`wk ${d.w}`);
+    }
+    const lg = el('div', 'legend'); for (const [S, col] of [[R.SA, ca], [R.SB, cb]]) { const s = el('span'); const i = el('i', 'dot'); i.style.background = col; s.append(i, ' ' + S.t.manager); lg.append(s); }
+    const wrap = el('div'); wrap.append(lg, node); return wrap;
+  };
+
+  const riskChart = (R) => {
+    const node = el('div', 'chart'); node.style.minHeight = '0';
+    const rows_ = [R.SA, R.SB]; const W = innerWidth < 640 ? 400 : 640, rowH = 46, H = rows_.length * rowH + 30, L = innerWidth < 640 ? 96 : 120, Rr = 14;
+    const svg = svgIn(node, W, H).attr('height', null); const tp = tip(node);
+    const lo = Math.min(0, ...rows_.map((S) => S.risk.p10)), hi = Math.max(0, ...rows_.map((S) => S.risk.p90));
+    const pad = Math.max(10, (hi - lo) * 0.08); const x = d3.scaleLinear([lo - pad, hi + pad], [L, W - Rr]).nice();
+    for (const tk of x.ticks(6)) { svg.append('line').attr('x1', x(tk)).attr('x2', x(tk)).attr('y1', 6).attr('y2', H - 22).attr('stroke', tk === 0 ? C.muted : C.line).attr('stroke-dasharray', tk === 0 ? null : '2 4'); svg.append('text').attr('x', x(tk)).attr('y', H - 6).attr('text-anchor', 'middle').style('font-size', '10px').attr('fill', C.muted).text(tk > 0 ? '+' + tk : tk); }
+    rows_.forEach((S, k) => {
+      const r = S.risk, cy = 14 + k * rowH + rowH / 2 - 8, col = SL.avColor(S.t.manager);
+      svg.append('text').attr('x', 0).attr('y', cy).attr('dy', '0.35em').attr('class', 'strong').text(S.t.manager.length > 15 ? S.t.manager.slice(0, 14) + '…' : S.t.manager);
+      svg.append('line').attr('x1', x(r.p10)).attr('x2', x(r.p90)).attr('y1', cy).attr('y2', cy).attr('stroke', col).attr('stroke-width', 2);
+      svg.append('rect').attr('x', x(r.p25)).attr('width', Math.max(2, x(r.p75) - x(r.p25))).attr('y', cy - 9).attr('height', 18).attr('rx', 4).attr('fill', col).attr('opacity', 0.45);
+      svg.append('circle').attr('cx', x(r.p50)).attr('cy', cy).attr('r', 6).attr('fill', col).attr('stroke', '#0b0e16').attr('stroke-width', 2);
+      svg.append('rect').attr('x', L).attr('width', W - Rr - L).attr('y', cy - 16).attr('height', 32).attr('fill', 'transparent')
+        .on('pointermove', (ev) => tp.show(ev, S.t.manager, [`Typical: ${sg(r.p50, 0)} pts over weeks ${WK[0]}–${WK[NW - 1]}`, `Middle half: ${sg(r.p25, 0)} to ${sg(r.p75, 0)}`, `Bad 10% / good 10%: ${sg(r.p10, 0)} / ${sg(r.p90, 0)}`, `Comes out ahead: ${pct(r.better)}`])).on('pointerleave', () => tp.hide());
+    });
+    return node;
+  };
+
+  const playerTable = (R) => {
+    const wrap = el('div', 'tbl'); const tb = el('table', 'ttable'); const th = el('thead'); const hr = el('tr');
+    for (const h of ['Player', 'Goes to', 'Value', 'G', 'PPG', 'Last 3', `Rest/wk`, 'Playoffs/wk', 'Swing', 'Bye', 'Status', `Playoff matchups`, 'Trade value']) hr.append(el('th', ['Player', 'Goes to', 'Bye', 'Status', 'Playoff matchups'].includes(h) ? null : 'n', h));
+    th.append(hr); tb.append(th); const body = el('tbody');
+    for (const [S, to] of [[R.SA, R.SB], [R.SB, R.SA]]) for (const p of S.out) {
+      const x = PL[p], tr = el('tr');
+      const c = el('td'); const w = el('div', 'tpl'); w.append(pchip(x.n, x.pos, 26), el('span', null, `${x.n} `), el('span', 'muted small', `${x.pos} · ${x.nfl}`)); c.append(w); tr.append(c);
+      tr.append(el('td', null, to.t.manager));
+      for (const v of [f1(x.v), x.g, f1(x.ppg), f1(x.l3), f1(avgE(p, REG)), f1(avgE(p, POI)), '±' + f1(x.sd)]) tr.append(el('td', 'n', String(v)));
+      tr.append(el('td', null, byeOf(p) ? `wk ${byeOf(p)}` : '—'));
+      const bw = backWeek(p); tr.append(el('td', bw ? 'neg' : null, bw === 'never' ? 'Out for season' : bw ? `${x.st || 'Out'} · back wk ${bw}` : x.st || 'Healthy'));
+      const ms = el('td'); for (const s of poSched(p)) { const sp = el('span', 'mu ' + (s.rk == null ? '' : s.rk <= 10 ? 'easy' : s.rk >= 23 ? 'hard' : 'mid'), s.op === 'BYE' ? 'BYE' : s.op); sp.title = s.rk ? `Week ${s.w}: ${s.op}, ${s.rk}${['th', 'st', 'nd', 'rd'][(s.rk % 10 > 3 || [11, 12, 13].includes(s.rk % 100)) ? 0 : s.rk % 10]} most points allowed to ${x.pos}` : `Week ${s.w}`; ms.append(sp); } tr.append(ms);
+      tr.append(el('td', 'n', f1(tvalue(p))));
+      body.append(tr);
+    }
+    tb.append(body); wrap.append(tb); SL.labelCells(body); return wrap;
+  };
+
+  const compareTable = (R) => {
+    const wrap = el('div', 'tbl'); const tb = el('table'); const hr = el('tr');
+    hr.append(el('th', null, ''), el('th', 'n', R.SA.t.manager), el('th', 'n', R.SB.t.manager)); const th = el('thead'); th.append(hr); tb.append(th);
+    const body = el('tbody');
+    const row = (lab, fn, fmt = f1, good = 1) => { const tr = el('tr'); tr.append(el('td', null, lab)); for (const S of [R.SA, R.SB]) { const [b, a] = fn(S); tr.append(deltaCell(b, a, fmt, good)); } body.append(tr); };
+    row('Lineup value now (League HQ)', (S) => [S.before.hq, S.after.hq]);
+    row(`Expected pts/wk, weeks ${WK[0]}–${M.po - 1}`, (S) => [S.before.ros, S.after.ros]);
+    row(`Expected pts/wk, playoffs (${M.po}–${M.po + 2})`, (S) => [S.before.po, S.after.po]);
+    row('Bench cover (top 4 backups, pts/wk)', (S) => [S.before.bench, S.after.bench]);
+    row('Playoff odds', (S) => S.odds.po, pct);
+    row('Average seed', (S) => S.odds.seed, f1, -1);
+    row('Reach the final', (S) => S.odds.final, pct);
+    row('Title odds', (S) => S.odds.title, pct);
+    row('Trade value sent → received', (S) => [S.tvOut, S.tvIn]);
+    tb.append(body); wrap.append(tb); SL.labelCells(body); return wrap;
+  };
+
+  const posTable = (R) => {
+    const wrap = el('div', 'tbl'); const tb = el('table'); const th = el('thead'); const hr = el('tr');
+    hr.append(el('th', null, 'Starters at'), el('th', 'n', R.SA.t.manager), el('th', 'n', 'Rank'), el('th', 'n', R.SB.t.manager), el('th', 'n', 'Rank')); th.append(hr); tb.append(th);
+    const body = el('tbody');
+    for (const g of POSG) {
+      const tr = el('tr'); tr.append(el('td', null, g));
+      for (const S of [R.SA, R.SB]) { tr.append(deltaCell(S.before.grp[g], S.after.grp[g])); const d = S.rankB[g] - S.rankA[g]; const c = el('td', 'n'); c.append(el('span', 'muted', `${S.rankB[g]} → `), el('b', d > 0 ? 'pos' : d < 0 ? 'neg' : null, String(S.rankA[g]))); tr.append(c); }
+      body.append(tr);
+    }
+    tb.append(body); wrap.append(tb); SL.labelCells(body); return wrap;
+  };
+
+  const lineupCard = (S) => {
+    const card = el('div', 'card');
+    card.append(el('h3', null, `${S.t.manager}: lineup after the trade`), el('p', 'muted small', `Best lineup on today's League HQ values. New players marked ➕.`));
+    const lst = el('div', 'list');
+    for (const [slot, p, v] of S.after.hqPicks) {
+      const row = el('div', 'li'); row.append(el('span', 'pill', slot === 'FLEX' ? 'FLX' : slot));
+      if (p) { const x = PL[p]; const tx = el('div', 'grow'); tx.append(el('div', 'nm', (S.inn.includes(p) || S.r.notes.adds.includes(p) ? '➕ ' : '') + x.n), el('div', 'tm', `${x.pos} · ${x.nfl}${x.st ? ' · ' + x.st : ''}`)); row.append(pchip(x.n, x.pos, 28), tx, el('div', 'num', f1(v))); }
+      else row.append(el('div', 'grow muted', 'Empty'));
+      lst.append(row);
+    }
+    card.append(lst); return card;
+  };
+
+  const results = (R) => {
+    const box = el('div');
+    const [ga] = grade(R.SA.score), [gb] = grade(R.SB.score);
+    const d = R.SA.score - R.SB.score;
+    const hl = el('div', 'explain mt');
+    const who = Math.abs(d) < 1 ? 'Pretty even trade' : `Edge: ${d > 0 ? R.SA.t.manager : R.SB.t.manager}`;
+    hl.append(el('p', 'big', ''), el('p', null, ''));
+    hl.firstChild.append(el('b', null, `${who}. `), `${R.SA.t.manager} ${ga} · ${R.SB.t.manager} ${gb}`);
+    const both = R.SA.score >= 0.4 && R.SB.score >= 0.4;
+    hl.lastChild.textContent = both ? 'Both sides come out ahead: the trade fixes a need on each roster.' :
+      (R.SA.score <= -0.4 && R.SB.score <= -0.4) ? 'Both sides lose a little: the players fit better where they are now.' :
+      `Grades weigh the change in title odds most, then playoff odds, then expected points a week. Trade value (points over the best free agent at the position) is ${f1(R.SA.tvOut)} going to ${R.SB.t.manager} and ${f1(R.SB.tvOut)} going to ${R.SA.t.manager}.`;
+    box.append(hl);
+    const g = el('div', 'grid mt'); g.append(verdictCard(R.SA, R.SB), verdictCard(R.SB, R.SA)); box.append(g);
+    box.append(el('h2', null, 'Side by side'));
+    const c1 = el('div', 'card'); c1.append(compareTable(R), el('p', 'muted small mt', `Odds come from League HQ's Playoff race model (${(20000).toLocaleString()} simulated seasons, each team's strength moved week by week by its expected lineup), run with and without the trade on the same random draws so the difference is the trade, not luck. Without the trade they can differ a little from the Playoff race tab, which doesn't count byes.`)); box.append(c1);
+    box.append(el('h2', null, 'Week by week'));
+    const c2 = el('div', 'card'); c2.append(el('p', 'muted small', 'Change in each team\'s expected lineup score. Byes and injury timelines are built in.'), weekChart(R)); box.append(c2);
+    box.append(el('h2', null, 'Risk vs reward'));
+    const c3 = el('div', 'card'); c3.append(el('p', 'muted small', `Points gained or lost over weeks ${WK[0]}–${WK[NW - 1]} across 1,500 simulated seasons with random injuries (this season's rate by position) and weekly swings. Dot: typical result. Box: middle half. Line: 10th to 90th percentile.`), riskChart(R)); box.append(c3);
+    const g2 = el('div', 'grid mt');
+    const c4 = el('div', 'card'); c4.append(el('h3', null, 'Roster fit by position'), el('p', 'muted small', 'Expected points a week from each position\'s starters (FLEX counted by position), and the league rank.'), posTable(R)); g2.append(c4);
+    const c5 = el('div', 'card'); c5.append(el('h3', null, 'Ripple effect 🌊'), el('p', 'muted small', 'Teams whose playoff odds move most because of this trade.'));
+    const rl = el('div', 'list'); for (const x of [...R.ripple].sort((a, b) => Math.abs(b.d) - Math.abs(a.d)).slice(0, 4)) { const row = el('div', 'li'); const tx = el('div', 'grow'); tx.append(el('div', 'nm', x.t.manager), el('div', 'tm', x.t.team)); row.append(av(x.t.manager, 28), tx, el('div', 'num ' + (x.d > 0.002 ? 'pos' : x.d < -0.002 ? 'neg' : 'muted'), pp(x.d))); rl.append(row); }
+    c5.append(rl); g2.append(c5); box.append(g2);
+    box.append(el('h2', null, 'The players'));
+    const c6 = el('div', 'card'); c6.append(playerTable(R), el('p', 'muted small mt', `Value: League HQ value (65% season, 35% last 3). Rest/wk and Playoffs/wk: expected points a week, a blend of value and Sleeper's projections rescored for this league, 0 on byes and while out. Swing: typical week-to-week miss. Playoff matchups: green = a defense in the top 10 for points allowed to his position, red = bottom 10. Trade value: expected points over the best free agent at his position, weeks ${WK[0]}–${WK[NW - 1]}.`)); box.append(c6);
+    const g3 = el('div', 'grid mt'); g3.append(lineupCard(R.SA), lineupCard(R.SB)); box.append(g3);
+    return box;
+  };
+
+  function render() {
+    if (!host) return;
+    if (!state.a || IX[state.a] == null) state.a = SL.PICK(0) && IX[SL.PICK(0)] != null ? SL.PICK(0) : sortedTeams()[0].manager;
+    if (!state.b || IX[state.b] == null || state.b === state.a) { const c = SL.PICK(1); state.b = c && IX[c] != null && c !== state.a ? c : sortedTeams().find((t) => t.manager !== state.a).manager; }
+    const ta = TEAMS[IX[state.a]], tb = TEAMS[IX[state.b]];
+    for (const p of [...state.give]) if (![...ta.players, ...ta.ir, ...tb.players, ...tb.ir].includes(p)) state.give.delete(p);
+    const setup = el('div', 'grid tsetup'); setup.append(teamPicker('a', 'b'), teamPicker('b', 'a'));
+    const aOut = [...ta.players, ...ta.ir].filter((p) => state.give.has(p)), bOut = [...tb.players, ...tb.ir].filter((p) => state.give.has(p));
+    const bar = el('div', 'card tbar');
+    const sideTxt = (t, ps) => { const d = el('div', 'tgive'); d.append(av(t.manager, 26), el('b', null, t.manager), el('span', 'muted', ' sends '), el('span', null, ps.length ? ps.map((p) => PL[p].n).join(', ') : 'nothing yet')); return d; };
+    const clr = el('button', 'tclear', 'Clear'); clr.onclick = () => { state.give.clear(); save(); render(); };
+    const swap = el('button', 'tclear', '⇄ Swap sides'); swap.onclick = () => { [state.a, state.b] = [state.b, state.a]; save(); render(); };
+    const btns = el('div', 'tbtns'); btns.append(swap, clr);
+    bar.append(sideTxt(ta, aOut), sideTxt(tb, bOut), btns);
+    const res = el('div', 'tres');
+    host.replaceChildren(setup, bar, res);
+    const key = [state.a, state.b, ...aOut, '|', ...bOut].join(',');
+    if (!aOut.length && !bOut.length) { res.append(el('p', 'muted mt', 'Pick at least one player on either side to see the analysis.')); lastKey = key; return; }
+    res.append(el('p', 'muted mt', 'Crunching 20,000 seasons…'));
+    clearTimeout(timer);
+    timer = setTimeout(() => {
+      try { const R = analyze(state.a, state.b, new Set([...aOut, ...bOut])); res.replaceChildren(results(R)); }
+      catch (e) { console.error(e); res.replaceChildren(el('p', 'failed', 'Something went wrong running this trade.')); }
+    }, 30);
+    lastKey = key;
+  }
+
+  dash.draw('trade', (node) => {
+    // redraw on first view and when the viewing-as team changes; trade picks keep their own state
+    const pov = SL.POV();
+    if (host === node && node.dataset.pov === pov && node.childElementCount) return;
+    if (node.dataset.pov !== undefined && node.dataset.pov !== pov) { state.a = null; state.b = null; state.give.clear(); }
+    node.dataset.pov = pov; host = node; render();
+  });
+  dash.draw('tradeasof', (node) => { node.textContent = `Rosters as of week ${M.week}, ${M.season}. Trade deadline: week ${M.deadline}.`; });
+  window.SLtrade = { analyze, lineup, profile, odds, risk, T };
+})();
+
+/* TRADE-JS-END */</script>
 </body></html>
