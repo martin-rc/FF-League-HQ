@@ -94,6 +94,7 @@ window.SL_HEADMAP = { cols: 12, at: {"A.J. Brown": [0, 0], "AJ Barner": [0, 1], 
   .sl .pos { color: var(--mint); }
   .sl .neg { color: var(--pink); }
   .sl .tbl { overflow: auto; max-height: 30rem; }
+  .sl .tscroll { overflow-x: auto; }
   .sl table { border-collapse: collapse; width: 100%; font-size: 13px; font-variant-numeric: tabular-nums; }
   .sl th { text-align: left; font-weight: 700; font-size: 11px; text-transform: uppercase; letter-spacing: .05em; color: var(--muted); padding: 8px; border-bottom: 1px solid var(--line); position: sticky; top: 0; background: var(--card); white-space: nowrap; }
   .sl td { padding: 8px; border-bottom: 1px solid var(--line); white-space: nowrap; }
@@ -2891,7 +2892,8 @@ window.SL_HEADMAP = { cols: 12, at: {"A.J. Brown": [0, 0], "AJ Barner": [0, 1], 
       const b2 = el('div', 'bar'); const f2 = el('i'); f2.style.width = (100 * r.actual) + '%'; f2.style.background = C.mint; b2.append(f2);
       g.append(b1, b2); const n = el('div', 'num'); n.append(el('div', null, d3.format('.0%')(r.actual)), el('div', 'tm', `won · ${d3.format('.0%')(r.predicted)} exp.`)); li.append(g, n); cal.append(li);
     }
-    node.replaceChildren(tbl, el('div', 'rgroup', 'Did favorites win as often as predicted?'), cal);
+    const wrap = el('div', 'tscroll'); wrap.append(tbl);   // the table is wider than a phone
+    node.replaceChildren(wrap, el('div', 'rgroup', 'Did favorites win as often as predicted?'), cal);
   });
 })();
 </script>
